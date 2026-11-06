@@ -1,0 +1,16 @@
+# Streamlit Community Cloud picks this up automatically.
+
+[theme]
+base = "light"
+primaryColor = "#1f4f8f"
+backgroundColor = "#ffffff"
+secondaryBackgroundColor = "#f4f7fb"
+textColor = "#15181d"
+
+[server]
+# The app holds a live consultation in session state; a reload mid-conversation
+# would silently drop the user's case file.
+runOnSave = false
+
+[browser]
+gatherUsageStats = false

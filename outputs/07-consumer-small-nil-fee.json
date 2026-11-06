@@ -1,0 +1,227 @@
+{
+  "case": {
+    "domain": "consumer",
+    "domain_label": "Refund for goods or services",
+    "lang": "en",
+    "facts": {
+      "amount": 24000.0,
+      "problem_on": "2026-09-10",
+      "has_proof_of_payment": true,
+      "what_bought": "yes I complained on their app twice"
+    },
+    "flags": [],
+    "notes": [
+      "classified as consumer (confidence 1.0, scores {'deposit': 0, 'salary': 0, 'consumer': 5})",
+      "paid_on: asked twice, no usable answer; skipped"
+    ],
+    "complete": true,
+    "completeness": [
+      4,
+      5
+    ]
+  },
+  "checks": [
+    {
+      "check": "domain",
+      "pass": true,
+      "detail": "got 'consumer', want 'consumer'"
+    },
+    {
+      "check": "deadline_length",
+      "pass": true,
+      "detail": "rule consumer"
+    },
+    {
+      "check": "forum_present",
+      "pass": true,
+      "detail": "got ['nch', 'district_commission']"
+    },
+    {
+      "check": "fee_nil",
+      "pass": true,
+      "detail": "fees [0]"
+    },
+    {
+      "check": "guard_clean",
+      "pass": true,
+      "detail": "0 finding(s): []"
+    },
+    {
+      "check": "disclaimer_shown",
+      "pass": true,
+      "detail": "no disclaimer in the consultation"
+    },
+    {
+      "check": "no_case_law_anywhere",
+      "pass": true,
+      "detail": "unredacted case law present"
+    }
+  ],
+  "session_id": "ee986a74",
+  "stage": "assessed",
+  "assessment": {
+    "case": {
+      "domain": "consumer",
+      "domain_label": "Refund for goods or services",
+      "lang": "en",
+      "facts": {
+        "amount": 24000.0,
+        "problem_on": "2026-09-10",
+        "has_proof_of_payment": true,
+        "what_bought": "yes I complained on their app twice"
+      },
+      "flags": [],
+      "notes": [
+        "classified as consumer (confidence 1.0, scores {'deposit': 0, 'salary': 0, 'consumer': 5})",
+        "paid_on: asked twice, no usable answer; skipped"
+      ],
+      "complete": true,
+      "completeness": [
+        4,
+        5
+      ]
+    },
+    "deadline": {
+      "rule_key": "consumer",
+      "label": "2 years",
+      "runs_from_date": "2026-09-10",
+      "runs_from_desc": "the date the problem arose or the refund was refused",
+      "expires_on": "2028-09-10",
+      "days_left": 674,
+      "expired": false,
+      "urgent": false,
+      "condonable": true,
+      "condonation_note": "The commission may admit a late complaint if you show sufficient cause and it records reasons.",
+      "cites": [
+        "CPA2019_S69"
+      ]
+    },
+    "forums": [
+      {
+        "id": "nch",
+        "name": "National Consumer Helpline (1915)",
+        "stage": "before filing",
+        "how": "Call 1915 or file at consumerhelpline.gov.in. They take it up with the company directly.",
+        "fee": null,
+        "fee_label": "Free",
+        "lawyer_needed": false,
+        "typical_time": "days to a few weeks",
+        "caveat": "",
+        "cites": [
+          "NCH_HELPLINE"
+        ]
+      },
+      {
+        "id": "district_commission",
+        "name": "District Consumer Disputes Redressal Commission",
+        "stage": "formal",
+        "how": "File online yourself at edaakhil.nic.in, or in person at the District Commission for the district where you live or work.",
+        "fee": 0,
+        "fee_label": "No fee",
+        "lawyer_needed": false,
+        "typical_time": "3 months is the statutory target; in practice often longer",
+        "caveat": "",
+        "cites": [
+          "CPA2019_S34",
+          "CPA2021_PECUNIARY_RULES",
+          "CPA2019_S38_7",
+          "CPA_EDAAKHIL"
+        ]
+      }
+    ],
+    "escalations": [],
+    "must_see_lawyer": false,
+    "citation_ids": [
+      "CPA2019_S69",
+      "NCH_HELPLINE",
+      "CPA2019_S34",
+      "CPA2021_PECUNIARY_RULES",
+      "CPA2019_S38_7",
+      "CPA_EDAAKHIL",
+      "CPA2019_S2_7",
+      "CPA2019_S2_11",
+      "CPA2019_S2_47",
+      "CPA2019_S39",
+      "LIMITATION1963_S3",
+      "LSA1987_S12",
+      "NALSA_HELPLINE",
+      "LEGAL_NOTICE_PRACTICE",
+      "EVIDENCE_PRACTICE"
+    ]
+  },
+  "transcript": [
+    {
+      "who": "user",
+      "text": "I ordered a washing machine online for 24000 on 2 September 2026. It arrived with a cracked drum. They acknowledged it on 10 September 2026 and promised a refund, and nothing has come.",
+      "stage": "triage",
+      "guard": null
+    },
+    {
+      "who": "assistant",
+      "text": "Got it — this looks like **Refund for goods or services**. I need a few facts before I can tell you anything useful.\n\n**(2/5)** What date did you pay?",
+      "stage": "intake",
+      "guard": null
+    },
+    {
+      "who": "user",
+      "text": "a washing machine that arrived damaged",
+      "stage": "intake",
+      "guard": null
+    },
+    {
+      "who": "assistant",
+      "text": "**(2/5)** What date did you pay?",
+      "stage": "intake",
+      "guard": null
+    },
+    {
+      "who": "user",
+      "text": "yes I have the order confirmation and the bank statement",
+      "stage": "intake",
+      "guard": null
+    },
+    {
+      "who": "assistant",
+      "text": "**(3/5)** What did you buy, and what went wrong?",
+      "stage": "intake",
+      "guard": null
+    },
+    {
+      "who": "user",
+      "text": "yes I complained on their app twice",
+      "stage": "intake",
+      "guard": null
+    },
+    {
+      "who": "assistant",
+      "text": "So you paid ₹24,000 for yes I complained on their app twice and the refund has not come through. Here is where you stand.\n\n## Where you stand — ₹24,000\n\n### ⏳ Your deadline\n\n🟢 **You have about 674 days left.**\n\nYou have **2 years** from **10 September 2026** (the date the problem arose or the refund was refused). That runs out on **10 September 2028**.\n\n### 🏛️ Where to go\n\n**Try these first — they are free and often enough:**\n\n- **National Consumer Helpline (1915)** — Call 1915 or file at consumerhelpline.gov.in. They take it up with the company directly.\n  - Usually takes: days to a few weeks\n\n**If that does not work:**\n\n- **District Consumer Disputes Redressal Commission** — fee nil; 3 months is the statutory target; in practice often longer; you can do this yourself\n  - File online yourself at edaakhil.nic.in, or in person at the District Commission for the district where you live or work.\n\n### 📄 What to gather\n\n**You already have:**\n\n- ✅ proof that you paid (bank entry, receipt or bill)\n\nAnything in writing where they admit the amount is your strongest card. Bank records beat memory. Save the screenshots now.\n\n### ✅ What to do next\n\n1. Put **10 September 2028** in your phone calendar now. That is your hard deadline.\n2. Call 1915 or file at consumerhelpline.gov.in. They take it up with the company directly.\n3. Save your evidence somewhere it cannot be lost: screenshot the chats, download the bank statement, photograph the agreement.\n4. If that fails: District Consumer Disputes Redressal Commission.\n\n---\n\n_This is general legal information, not legal advice, and this is not a lawyer. It covers three problems only and can be wrong. Check anything important with a real lawyer before you act on it — free legal aid is available on **15100**._\n\n---\n\n**What this is based on**\n\n- **CPA 2019, s. 69** — Deadline to file a consumer complaint\n- **National Consumer Helpline** — The consumer helpline\n- **CPA 2019, s. 34** — Which consumer commission hears your case\n- **CPA Jurisdiction Rules 2021, Rules 3-5** — Money limits of each consumer commission\n  - ⚠️ These limits were revised in 2021 and were different before. Confirm the current figures on e-Daakhil before filing.\n- **CPA 2019, s. 38(7)** — How long a consumer case should take\n- **e-Daakhil (online filing)** — Filing a consumer complaint online\n- **Practice note: evidence** — What proof is worth having\n- **Legal Services Authorities Act 1987, s. 12** — Who gets a free lawyer\n  - ⚠️ The income limit is set separately by each state and by the Supreme Court Legal Services Committee. Do not state a figure.\n- **NALSA (free legal aid)** — Free legal help: who to call\n\n_Plain-language summaries written for this tool, not quotations from the statute. Every one links to the original — check it before you rely on it in anything you file._\n\n---\n\n**What else I can do**\n\n- `notice` — draft a legal notice you can send\n- `practice` — rehearse the argument against the other side\n- `summary` — your case file, to save or show a lawyer",
+      "stage": "assessed",
+      "guard": {
+        "clean": true,
+        "worst_severity": "none",
+        "blocked": false,
+        "used_citations": [],
+        "rejected_citations": [],
+        "findings": []
+      }
+    },
+    {
+      "who": "user",
+      "text": "Nagpur, Maharashtra",
+      "stage": "assessed",
+      "guard": null
+    },
+    {
+      "who": "assistant",
+      "text": "I can `notice`, `practice` or `summary`. Or tell me a fact that has changed and I will redo the assessment.",
+      "stage": "assessed",
+      "guard": null
+    }
+  ],
+  "guard": {
+    "reports": 1,
+    "total_findings": 0,
+    "clean": true,
+    "findings": []
+  }
+}

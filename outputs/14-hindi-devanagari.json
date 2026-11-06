@@ -1,0 +1,232 @@
+{
+  "case": {
+    "domain": "salary",
+    "domain_label": "Unpaid salary",
+    "lang": "hi",
+    "facts": {
+      "amount": 12000.0,
+      "monthly_wage": 36000.0,
+      "due_since": "2026-09-01",
+      "still_employed": true,
+      "has_appointment_letter": false
+    },
+    "flags": [],
+    "notes": [
+      "classified as salary (confidence 1.0, scores {'deposit': 0, 'salary': 4, 'consumer': 0})"
+    ],
+    "complete": true,
+    "completeness": [
+      4,
+      5
+    ]
+  },
+  "checks": [
+    {
+      "check": "domain",
+      "pass": true,
+      "detail": "got 'salary', want 'salary'"
+    },
+    {
+      "check": "language",
+      "pass": true,
+      "detail": "got 'hi', want 'hi'"
+    },
+    {
+      "check": "guard_clean",
+      "pass": true,
+      "detail": "0 finding(s): []"
+    },
+    {
+      "check": "disclaimer_shown",
+      "pass": true,
+      "detail": "no disclaimer in the consultation"
+    },
+    {
+      "check": "no_case_law_anywhere",
+      "pass": true,
+      "detail": "unredacted case law present"
+    }
+  ],
+  "session_id": "19bbe1fe",
+  "stage": "assessed",
+  "assessment": {
+    "case": {
+      "domain": "salary",
+      "domain_label": "Unpaid salary",
+      "lang": "hi",
+      "facts": {
+        "amount": 12000.0,
+        "monthly_wage": 36000.0,
+        "due_since": "2026-09-01",
+        "still_employed": true,
+        "has_appointment_letter": false
+      },
+      "flags": [],
+      "notes": [
+        "classified as salary (confidence 1.0, scores {'deposit': 0, 'salary': 4, 'consumer': 0})"
+      ],
+      "complete": true,
+      "completeness": [
+        4,
+        5
+      ]
+    },
+    "deadline": {
+      "rule_key": "salary_civil",
+      "label": "3 years",
+      "runs_from_date": "2026-09-01",
+      "runs_from_desc": "the date the first unpaid salary became payable",
+      "expires_on": "2029-09-01",
+      "days_left": 1030,
+      "expired": false,
+      "urgent": false,
+      "condonable": false,
+      "condonation_note": "A civil suit filed out of time is liable to be dismissed as time-barred, and the court applies the bar by itself.",
+      "cites": [
+        "LIMITATION1963_ART55",
+        "LIMITATION1963_S3"
+      ]
+    },
+    "forums": [
+      {
+        "id": "internal_demand",
+        "name": "Written demand to the employer",
+        "stage": "before filing",
+        "how": "Email HR and the reporting manager with the exact amount and period, and ask for a written reason if they refuse. Keep the thread.",
+        "fee": null,
+        "fee_label": "Free, or the cost of registered post",
+        "lawyer_needed": false,
+        "typical_time": "15 to 30 days",
+        "caveat": "",
+        "cites": [
+          "LEGAL_NOTICE_PRACTICE",
+          "EVIDENCE_PRACTICE"
+        ]
+      },
+      {
+        "id": "labour_commissioner",
+        "name": "Labour Commissioner / conciliation",
+        "stage": "formal",
+        "how": "File a complaint with the office of the Labour Commissioner for your district. They call both sides for conciliation.",
+        "fee": null,
+        "fee_label": "Free",
+        "lawyer_needed": false,
+        "typical_time": "weeks to months",
+        "caveat": "",
+        "cites": [
+          "SHOPS_ESTAB_STATE"
+        ]
+      },
+      {
+        "id": "labour_court_33c2",
+        "name": "Labour Court, for computation and recovery",
+        "stage": "formal",
+        "how": "Apply to the Labour Court under section 33C(2) of the Industrial Disputes Act for the amount due to be computed and certified for recovery.",
+        "fee": null,
+        "fee_label": "Low; varies by state",
+        "lawyer_needed": true,
+        "typical_time": "months",
+        "caveat": "Open only to those who qualify as a 'workman', which excludes most managerial and supervisory roles. Get this checked.",
+        "cites": [
+          "ID1947_S33C2"
+        ]
+      },
+      {
+        "id": "civil_suit_salary",
+        "name": "Civil suit for recovery",
+        "stage": "formal",
+        "how": "A recovery suit in the civil court with jurisdiction. Usually the last resort for salary.",
+        "fee": null,
+        "fee_label": "Court fee on a percentage of the amount claimed, varying by state",
+        "lawyer_needed": true,
+        "typical_time": "a year or more",
+        "caveat": "",
+        "cites": [
+          "CONTRACT1872_S73",
+          "LIMITATION1963_ART55"
+        ]
+      }
+    ],
+    "escalations": [],
+    "must_see_lawyer": false,
+    "citation_ids": [
+      "LIMITATION1963_ART55",
+      "LIMITATION1963_S3",
+      "LEGAL_NOTICE_PRACTICE",
+      "EVIDENCE_PRACTICE",
+      "SHOPS_ESTAB_STATE",
+      "ID1947_S33C2",
+      "CONTRACT1872_S73",
+      "PWA1936_S5",
+      "PWA1936_S1_6",
+      "PWA1936_S15",
+      "PWA1936_S15_2_LIMIT",
+      "CODEWAGES2019_STATUS",
+      "LSA1987_S12",
+      "NALSA_HELPLINE"
+    ]
+  },
+  "transcript": [
+    {
+      "who": "user",
+      "text": "मेरी कंपनी ने मुझे तीन महीने से सैलरी नहीं दी है। कुल 36000 रुपये बाकी हैं। मेरी सैलरी 12000 महीना है। सितंबर 2026 से नहीं मिली।",
+      "stage": "triage",
+      "guard": null
+    },
+    {
+      "who": "assistant",
+      "text": "Got it — this looks like **Unpaid salary**. I need a few facts before I can tell you anything useful.\n\n**(3/5)** क्या आप अभी भी वहाँ काम कर रहे हैं?",
+      "stage": "intake",
+      "guard": null
+    },
+    {
+      "who": "user",
+      "text": "हाँ अभी भी काम कर रहा हूँ",
+      "stage": "intake",
+      "guard": null
+    },
+    {
+      "who": "assistant",
+      "text": "**(4/5)** क्या आपके पास अपॉइंटमेंट लेटर या लिखित कॉन्ट्रैक्ट है?",
+      "stage": "intake",
+      "guard": null
+    },
+    {
+      "who": "user",
+      "text": "नहीं, कोई अपॉइंटमेंट लेटर नहीं है",
+      "stage": "intake",
+      "guard": null
+    },
+    {
+      "who": "assistant",
+      "text": "So you are owed ₹12,000 in unpaid salary, going back to 01 September 2026. Here is what you can do about it.\n\n## Where you stand — ₹12,000\n\n### ⏳ आपकी समय-सीमा\n\n🟢 **आपके पास लगभग 1030 दिन बचे हैं।**\n\nYou have **3 years** from **01 September 2026** (the date the first unpaid salary became payable). That runs out on **01 September 2029**.\n\n### 🏛️ कहाँ जाना है\n\n**Try these first — they are free and often enough:**\n\n- **Written demand to the employer** — Email HR and the reporting manager with the exact amount and period, and ask for a written reason if they refuse. Keep the thread.\n  - Usually takes: 15 to 30 days\n\n**If that does not work:**\n\n- **Labour Commissioner / conciliation** — Free; weeks to months; you can do this yourself\n  - File a complaint with the office of the Labour Commissioner for your district. They call both sides for conciliation.\n- **Labour Court, for computation and recovery** — Low; varies by state; months; lawyer recommended\n  - Apply to the Labour Court under section 33C(2) of the Industrial Disputes Act for the amount due to be computed and certified for recovery.\n  - ⚠️ Open only to those who qualify as a 'workman', which excludes most managerial and supervisory roles. Get this checked.\n- **Civil suit for recovery** — Court fee on a percentage of the amount claimed, varying by state; a year or more; lawyer recommended\n  - A recovery suit in the civil court with jurisdiction. Usually the last resort for salary.\n\n### 📄 क्या सबूत जुटाना है\n\n**Worth trying to get:**\n\n- ⬜ the appointment letter or contract\n\nLikhit mein jahan wo rakam maante hain, wo aapka sabse majboot sabooot hai. Bank record yaad se behtar hai. Screenshot abhi save kar lein.\n\n_Missing a document does not sink your case. A written message where the other side admits the amount is often worth more than a formal receipt, so look through your WhatsApp and email first._\n\n### ✅ अब क्या करना है\n\n1. Put **01 September 2029** in your phone calendar now. That is your hard deadline.\n2. Email HR and the reporting manager with the exact amount and period, and ask for a written reason if they refuse. Keep the thread.\n3. Save your evidence somewhere it cannot be lost: screenshot the chats, download the bank statement, photograph the agreement.\n4. If there is no reply in 15 days, send a written legal notice. This tool can draft one for you from the facts above.\n5. If that fails: Labour Commissioner / conciliation.\n\n---\n\n_यह सामान्य कानूनी जानकारी है, कानूनी सलाह नहीं, और मैं वकील नहीं हूँ। यह केवल तीन समस्याओं के लिए बनाया गया है और गलत हो सकता है। कोई भी ज़रूरी कदम उठाने से पहले असली वकील से पूछें — मुफ़्त कानूनी मदद **15100** पर मिलती है।_\n\n---\n\n**What this is based on**\n\n- **Limitation Act 1963, Schedule, Article 55** — Three years for breach of contract\n  - ⚠️ Which Article of the Schedule applies depends on how the claim is framed; a deposit claim may fall under Article 55 or the residuary Article 113. Both give three years.\n- **Limitation Act 1963, s. 3** — What happens if you are late\n- **Practice note: legal notices** — What a legal notice does and does not do\n  - ⚠️ Some specific claims do require a statutory notice with its own deadline. None of the three domains this assistant covers is one of them, but a lawyer should confirm for anything outside them.\n- **Practice note: evidence** — What proof is worth having\n- **State Shops & Establishments Act** — The state law covering shops and offices\n  - ⚠️ This assistant does not hold the text of any individual state Act and must not state section numbers, notice periods or limits for one.\n- **Industrial Disputes Act 1947, s. 33C(2)** — Recovering money due from an employer\n  - ⚠️ Whether a person is a 'workman' excludes most managerial and supervisory roles above a pay threshold, and is frequently contested. This is a point on which a real lawyer should be consulted.\n- **Indian Contract Act 1872, s. 73** — Compensation for breach of contract\n- **Legal Services Authorities Act 1987, s. 12** — Who gets a free lawyer\n  - ⚠️ The income limit is set separately by each state and by the Supreme Court Legal Services Committee. Do not state a figure.\n- **NALSA (free legal aid)** — Free legal help: who to call\n\n_Plain-language summaries written for this tool, not quotations from the statute. Every one links to the original — check it before you rely on it in anything you file._\n\n---\n\n**What else I can do**\n\n- `notice` — draft a legal notice you can send\n- `practice` — rehearse the argument against the other side\n- `summary` — your case file, to save or show a lawyer",
+      "stage": "assessed",
+      "guard": {
+        "clean": true,
+        "worst_severity": "none",
+        "blocked": false,
+        "used_citations": [],
+        "rejected_citations": [],
+        "findings": []
+      }
+    },
+    {
+      "who": "user",
+      "text": "हाँ पुराने महीनों की बैंक एंट्री है",
+      "stage": "assessed",
+      "guard": null
+    },
+    {
+      "who": "assistant",
+      "text": "I can `notice`, `practice` or `summary`. Or tell me a fact that has changed and I will redo the assessment.",
+      "stage": "assessed",
+      "guard": null
+    }
+  ],
+  "guard": {
+    "reports": 1,
+    "total_findings": 0,
+    "clean": true,
+    "findings": []
+  }
+}

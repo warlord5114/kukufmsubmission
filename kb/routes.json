@@ -1,0 +1,276 @@
+{
+  "_about": {
+    "what": "Forum selection, deadlines and fees, as data the code evaluates.",
+    "why": "These are the answers a model is most confidently wrong about: it will invent a pecuniary limit, miscount a limitation period, or quote a filing fee from another country. None of it is generated. The code reads this file, does the arithmetic on real dates, and the model is only allowed to narrate the result.",
+    "last_reviewed": "2026-11-06"
+  },
+
+  "limitation": {
+    "consumer": {
+      "months": 24,
+      "label": "2 years",
+      "runs_from": "the date the cause of action arose, usually the date of refusal or the date the service failed",
+      "cites": ["CPA2019_S69"],
+      "condonable": true,
+      "condonation_note": "The commission may admit a late complaint if you show sufficient cause and it records reasons.",
+      "warn_at_months_left": 3
+    },
+    "salary_pwa": {
+      "months": 12,
+      "label": "12 months",
+      "runs_from": "the date the wages became payable or the deduction was made",
+      "cites": ["PWA1936_S15_2_LIMIT"],
+      "condonable": true,
+      "condonation_note": "The Authority may admit a late application for sufficient cause, but do not rely on it.",
+      "warn_at_months_left": 3
+    },
+    "salary_civil": {
+      "months": 36,
+      "label": "3 years",
+      "runs_from": "the date the amount fell due and was not paid",
+      "cites": ["LIMITATION1963_ART55", "LIMITATION1963_S3"],
+      "condonable": false,
+      "condonation_note": "A civil suit filed out of time is liable to be dismissed as time-barred, and the court applies the bar by itself.",
+      "warn_at_months_left": 6
+    },
+    "deposit": {
+      "months": 36,
+      "label": "3 years",
+      "runs_from": "the date the landlord refused to refund, or the date the deposit became payable on handing over possession",
+      "cites": ["LIMITATION1963_ART55", "LIMITATION1963_S3"],
+      "condonable": false,
+      "condonation_note": "A civil suit filed out of time is liable to be dismissed as time-barred, and the court applies the bar by itself.",
+      "warn_at_months_left": 6
+    }
+  },
+
+  "forums": {
+    "consumer": [
+      {
+        "id": "nch",
+        "name": "National Consumer Helpline (1915)",
+        "stage": "before filing",
+        "applies_if": {},
+        "cost": "Free",
+        "lawyer_needed": false,
+        "typical_time": "days to a few weeks",
+        "how": "Call 1915 or file at consumerhelpline.gov.in. They take it up with the company directly.",
+        "cites": ["NCH_HELPLINE"]
+      },
+      {
+        "id": "district_commission",
+        "name": "District Consumer Disputes Redressal Commission",
+        "stage": "formal",
+        "applies_if": { "amount_max": 5000000 },
+        "cost_slabs": [
+          { "up_to": 500000, "fee": 0, "label": "No fee" },
+          { "up_to": 1000000, "fee": 200 },
+          { "up_to": 2000000, "fee": 400 },
+          { "up_to": 5000000, "fee": 1000 }
+        ],
+        "lawyer_needed": false,
+        "typical_time": "3 months is the statutory target; in practice often longer",
+        "how": "File online yourself at edaakhil.nic.in, or in person at the District Commission for the district where you live or work.",
+        "cites": ["CPA2019_S34", "CPA2021_PECUNIARY_RULES", "CPA2019_S38_7", "CPA_EDAAKHIL"]
+      },
+      {
+        "id": "state_commission",
+        "name": "State Consumer Disputes Redressal Commission",
+        "stage": "formal",
+        "applies_if": { "amount_min": 5000000, "amount_max": 20000000 },
+        "cost_slabs": [
+          { "up_to": 10000000, "fee": 2000 },
+          { "up_to": 20000000, "fee": 2500 }
+        ],
+        "lawyer_needed": false,
+        "typical_time": "longer than the District Commission",
+        "how": "File at the State Commission for your state, or online at edaakhil.nic.in.",
+        "cites": ["CPA2021_PECUNIARY_RULES", "CPA_EDAAKHIL"]
+      },
+      {
+        "id": "national_commission",
+        "name": "National Consumer Disputes Redressal Commission",
+        "stage": "formal",
+        "applies_if": { "amount_min": 20000000 },
+        "cost_slabs": [{ "up_to": null, "fee": 5000 }],
+        "lawyer_needed": true,
+        "typical_time": "long",
+        "how": "File at the National Commission, New Delhi, or online at edaakhil.nic.in.",
+        "cites": ["CPA2021_PECUNIARY_RULES"]
+      }
+    ],
+
+    "salary": [
+      {
+        "id": "internal_demand",
+        "name": "Written demand to the employer",
+        "stage": "before filing",
+        "applies_if": {},
+        "cost": "Free, or the cost of registered post",
+        "lawyer_needed": false,
+        "typical_time": "15 to 30 days",
+        "how": "Email HR and the reporting manager with the exact amount and period, and ask for a written reason if they refuse. Keep the thread.",
+        "cites": ["LEGAL_NOTICE_PRACTICE", "EVIDENCE_PRACTICE"]
+      },
+      {
+        "id": "pw_authority",
+        "name": "Authority under the Payment of Wages Act",
+        "stage": "formal",
+        "applies_if": { "monthly_wage_max": 24000 },
+        "cost": "No court fee for the application",
+        "lawyer_needed": false,
+        "typical_time": "varies by state, often a few months",
+        "how": "Apply to the Authority appointed under the Payment of Wages Act for your area, through the state Labour Department or Labour Commissioner's office.",
+        "cites": ["PWA1936_S15", "PWA1936_S15_2_LIMIT", "PWA1936_S5", "PWA1936_S1_6"]
+      },
+      {
+        "id": "labour_commissioner",
+        "name": "Labour Commissioner / conciliation",
+        "stage": "formal",
+        "applies_if": {},
+        "cost": "Free",
+        "lawyer_needed": false,
+        "typical_time": "weeks to months",
+        "how": "File a complaint with the office of the Labour Commissioner for your district. They call both sides for conciliation.",
+        "cites": ["SHOPS_ESTAB_STATE"]
+      },
+      {
+        "id": "labour_court_33c2",
+        "name": "Labour Court, for computation and recovery",
+        "stage": "formal",
+        "applies_if": { "monthly_wage_min": 24000 },
+        "cost": "Low; varies by state",
+        "lawyer_needed": true,
+        "typical_time": "months",
+        "how": "Apply to the Labour Court under section 33C(2) of the Industrial Disputes Act for the amount due to be computed and certified for recovery.",
+        "cites": ["ID1947_S33C2"],
+        "caveat": "Open only to those who qualify as a 'workman', which excludes most managerial and supervisory roles. Get this checked."
+      },
+      {
+        "id": "civil_suit_salary",
+        "name": "Civil suit for recovery",
+        "stage": "formal",
+        "applies_if": {},
+        "cost": "Court fee on a percentage of the amount claimed, varying by state",
+        "lawyer_needed": true,
+        "typical_time": "a year or more",
+        "how": "A recovery suit in the civil court with jurisdiction. Usually the last resort for salary.",
+        "cites": ["CONTRACT1872_S73", "LIMITATION1963_ART55"]
+      }
+    ],
+
+    "deposit": [
+      {
+        "id": "written_demand",
+        "name": "Written demand to the landlord",
+        "stage": "before filing",
+        "applies_if": {},
+        "cost": "Free, or the cost of registered post",
+        "lawyer_needed": false,
+        "typical_time": "15 to 30 days",
+        "how": "Message or email the landlord with the amount, the date you vacated and a deadline. Get the refusal in writing if you can; it is the most useful document you will have.",
+        "cites": ["EVIDENCE_PRACTICE", "LEGAL_NOTICE_PRACTICE"]
+      },
+      {
+        "id": "legal_notice_deposit",
+        "name": "Legal notice",
+        "stage": "before filing",
+        "applies_if": {},
+        "cost": "Free if you send it yourself; a lawyer typically charges a modest fee",
+        "lawyer_needed": false,
+        "typical_time": "15 to 30 days to comply",
+        "how": "Send by registered post with acknowledgement due, and keep the receipt and the tracking record.",
+        "cites": ["LEGAL_NOTICE_PRACTICE", "CONTRACT1872_S73"]
+      },
+      {
+        "id": "rent_authority",
+        "name": "Rent Controller or Rent Tribunal under your state's rent law",
+        "stage": "formal",
+        "applies_if": {},
+        "cost": "Varies by state",
+        "lawyer_needed": false,
+        "typical_time": "varies widely",
+        "how": "Check whether your state's Rent Act gives a Rent Controller jurisdiction over deposit disputes. The District Legal Services Authority can tell you for free.",
+        "cites": ["RENT_CONTROL_STATE", "MTA2021_ADOPTION"],
+        "caveat": "Whether this route exists at all depends entirely on your state."
+      },
+      {
+        "id": "small_causes",
+        "name": "Court of Small Causes",
+        "stage": "formal",
+        "applies_if": {},
+        "cost": "Court fee on the amount claimed; lower than a regular suit",
+        "lawyer_needed": false,
+        "typical_time": "months",
+        "how": "A summary money recovery suit, where your state's small causes ceiling covers the amount.",
+        "cites": ["SMALL_CAUSES", "CONTRACT1872_S73"]
+      },
+      {
+        "id": "civil_suit_deposit",
+        "name": "Civil suit for recovery of money",
+        "stage": "formal",
+        "applies_if": {},
+        "cost": "Court fee on a percentage of the amount claimed, varying by state",
+        "lawyer_needed": true,
+        "typical_time": "a year or more",
+        "how": "A recovery suit in the civil court with jurisdiction over the property or the landlord's residence.",
+        "cites": ["CONTRACT1872_S73", "LIMITATION1963_ART55"]
+      }
+    ]
+  },
+
+  "escalate_to_human": {
+    "_about": "Conditions under which the assistant must stop advising and send the user to a real lawyer. Evaluated in code, never left to the model's judgement.",
+    "rules": [
+      {
+        "id": "criminal",
+        "trigger": "criminal_matter",
+        "message": "This involves a criminal matter. That is outside what this assistant covers and getting it wrong is costly.",
+        "urgency": "high"
+      },
+      {
+        "id": "safety",
+        "trigger": "personal_safety",
+        "message": "You have described a threat to your safety. That comes before any money claim.",
+        "urgency": "immediate",
+        "extra": "Police: 112. Women's helpline: 181. Both are free and work from any phone."
+      },
+      {
+        "id": "time_barred",
+        "trigger": "limitation_expired",
+        "message": "On the dates you gave, the ordinary deadline looks like it has already passed. That does not always end the matter, but it needs a lawyer to look at before you spend anything.",
+        "urgency": "high"
+      },
+      {
+        "id": "court_pending",
+        "trigger": "proceedings_started",
+        "message": "There is already a case or a court date. Once proceedings have started, general guidance can do real harm.",
+        "urgency": "high"
+      },
+      {
+        "id": "notice_received",
+        "trigger": "received_legal_notice",
+        "message": "You have received a legal notice from the other side. Replies to a notice are used as evidence later, so this one should be drafted by a lawyer.",
+        "urgency": "high"
+      },
+      {
+        "id": "large_amount",
+        "trigger": "amount_above_2000000",
+        "message": "The amount here is large enough that a lawyer's fee is small by comparison.",
+        "urgency": "medium"
+      },
+      {
+        "id": "property_title",
+        "trigger": "ownership_dispute",
+        "message": "This is about who owns the property, not about a deposit. Title disputes need a lawyer from the start.",
+        "urgency": "high"
+      },
+      {
+        "id": "out_of_scope",
+        "trigger": "domain_unknown",
+        "message": "This is not one of the three problems this assistant has been built and checked for.",
+        "urgency": "medium"
+      }
+    ]
+  }
+}

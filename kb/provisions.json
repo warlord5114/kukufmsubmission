@@ -1,0 +1,557 @@
+{
+  "_about": {
+    "what": "The closed citation set. The assistant may cite nothing that is not in this file.",
+    "why": "A language model asked about Indian law will produce section numbers that look right and are not. Rather than asking it not to, the system only lets it reference ids that exist here, and strips anything else. Adding law means editing this file, not re-prompting.",
+    "honesty": "Every 'summary' below is written by a human in plain words. They are NOT verbatim statutory text, and the app never presents them as quotations. Each entry carries a source URL so a user or a lawyer can check the real provision.",
+    "last_reviewed": "2026-11-06",
+    "coverage": [
+      "deposit",
+      "salary",
+      "consumer"
+    ],
+    "not_covered": "Case law. There is no verified judgment database here, so the assistant is built to refuse to cite any case, by name or citation, under any circumstances.",
+    "caution": "Indian procedural law varies by state and changes often. Pecuniary limits, fees and wage ceilings are the fields most likely to be stale; each is marked with a volatility flag."
+  },
+  "provisions": [
+    {
+      "id": "CPA2019_S2_7",
+      "act": "Consumer Protection Act, 2019",
+      "act_short": "CPA 2019",
+      "section": "2(7)",
+      "heading": "Who counts as a consumer",
+      "summary": "A 'consumer' is a person who buys goods or hires services for consideration. It does not include someone who buys goods for resale or for a commercial purpose, though a person who buys for self-employment to earn a livelihood is still a consumer. The definition expressly covers online and offline transactions.",
+      "plain": "If you paid for a product or service for your own use, you are a consumer and can use the consumer forums.",
+      "plain_hi": "Agar aapne apne istemal ke liye koi saamaan ya service ke paise diye hain, to aap 'consumer' hain aur consumer forum mein shikayat kar sakte hain.",
+      "domains": [
+        "consumer"
+      ],
+      "use_when": "Establishing that the user has standing to file a consumer complaint.",
+      "confidence": "high",
+      "volatility": "low",
+      "source": "https://www.indiacode.nic.in/handle/123456789/15256"
+    },
+    {
+      "id": "CPA2019_S2_11",
+      "act": "Consumer Protection Act, 2019",
+      "act_short": "CPA 2019",
+      "section": "2(11)",
+      "heading": "Deficiency in service",
+      "summary": "'Deficiency' means any fault, shortcoming or inadequacy in the quality or manner of performance of a service that is required to be maintained by law or under a contract. It includes any act of negligence or omission that causes loss to the consumer, and deliberate withholding of relevant information.",
+      "plain": "If a service you paid for was not delivered properly, or they held back information they should have given you, that is a 'deficiency in service'.",
+      "plain_hi": "Agar jis service ke aapne paise diye wo theek se nahi mili, ya unhone zaroori baat chhupayi, to ye 'deficiency in service' hai.",
+      "domains": [
+        "consumer"
+      ],
+      "use_when": "A paid-for service was not provided, was provided badly, or a refund was promised and not paid.",
+      "confidence": "high",
+      "volatility": "low",
+      "source": "https://www.indiacode.nic.in/handle/123456789/15256"
+    },
+    {
+      "id": "CPA2019_S2_47",
+      "act": "Consumer Protection Act, 2019",
+      "act_short": "CPA 2019",
+      "section": "2(47)",
+      "heading": "Unfair trade practice",
+      "summary": "An 'unfair trade practice' is a deceptive method used to promote a sale or service. The definition includes false representations about quality or standard, misleading claims, refusing to take back defective goods or to withdraw deficient services, and refusing to refund money paid within the period stated in the bill or within thirty days where no period is stated.",
+      "plain": "Refusing a refund you were entitled to is itself a listed unfair trade practice, not just a broken promise.",
+      "plain_hi": "Jo refund aapka banta hai use dene se mana karna khud ek 'unfair trade practice' hai.",
+      "domains": [
+        "consumer"
+      ],
+      "use_when": "A seller or platform is refusing a refund, or made claims that turned out to be false.",
+      "confidence": "medium",
+      "caveat": "The refund limb is one of several clauses in a long definition; the exact sub-clause numbering should be checked before it is quoted in a filed document.",
+      "volatility": "low",
+      "source": "https://www.indiacode.nic.in/handle/123456789/15256"
+    },
+    {
+      "id": "CPA2019_S34",
+      "act": "Consumer Protection Act, 2019",
+      "act_short": "CPA 2019",
+      "section": "34",
+      "heading": "Which consumer commission hears your case",
+      "summary": "The District Consumer Disputes Redressal Commission hears complaints where the value of the goods or services paid as consideration does not exceed the limit prescribed by the Central Government. A complaint may be filed in the district where the opposite party works or carries on business, or where the complainant resides or personally works for gain.",
+      "plain": "You can file in your own district, where you live or work. You do not have to travel to the company's city.",
+      "plain_hi": "Aap apne hi district mein, jahan aap rehte ya kaam karte hain, complaint file kar sakte hain. Company ke sheher jaane ki zaroorat nahi.",
+      "domains": [
+        "consumer"
+      ],
+      "use_when": "Telling the user which forum to approach and that they can file locally.",
+      "confidence": "high",
+      "volatility": "low",
+      "source": "https://www.indiacode.nic.in/handle/123456789/15256"
+    },
+    {
+      "id": "CPA2021_PECUNIARY_RULES",
+      "act": "Consumer Protection (Jurisdiction of the District Commission, the State Commission and the National Commission) Rules, 2021",
+      "act_short": "CPA Jurisdiction Rules 2021",
+      "section": "Rules 3-5",
+      "heading": "Money limits of each consumer commission",
+      "summary": "District Commission: value of consideration up to Rs 50 lakh. State Commission: above Rs 50 lakh and up to Rs 2 crore. National Commission: above Rs 2 crore. The limit is based on the consideration paid, not on the compensation claimed.",
+      "plain": "The forum depends on what you PAID, not on what you are asking for. Most everyday refunds go to the District Commission.",
+      "plain_hi": "Forum is baat par depend karta hai ki aapne kitna PAID kiya, na ki aap kitna maang rahe hain. Zyadatar roz ke refund District Commission mein jaate hain.",
+      "domains": [
+        "consumer"
+      ],
+      "use_when": "Choosing the forum for a consumer complaint.",
+      "confidence": "high",
+      "volatility": "high",
+      "caveat": "These limits were revised in 2021 and were different before. Confirm the current figures on e-Daakhil before filing.",
+      "source": "https://consumeraffairs.nic.in/"
+    },
+    {
+      "id": "CPA2019_S38_7",
+      "act": "Consumer Protection Act, 2019",
+      "act_short": "CPA 2019",
+      "section": "38(7)",
+      "heading": "How long a consumer case should take",
+      "summary": "Every complaint is to be decided as far as possible within three months from the date the opposite party receives notice, where the complaint does not require analysis or testing of goods, and within five months where testing is required.",
+      "plain": "The law sets a target of about three months. In practice many commissions take longer, so treat this as the intended pace, not a guarantee.",
+      "plain_hi": "Kanoon mein lagbhag teen mahine ka target hai. Asliyat mein zyada samay lag sakta hai.",
+      "domains": [
+        "consumer"
+      ],
+      "use_when": "Setting expectations about timelines.",
+      "confidence": "high",
+      "volatility": "low",
+      "source": "https://www.indiacode.nic.in/handle/123456789/15256"
+    },
+    {
+      "id": "CPA2019_S39",
+      "act": "Consumer Protection Act, 2019",
+      "act_short": "CPA 2019",
+      "section": "39",
+      "heading": "What the commission can order",
+      "summary": "The District Commission may order the opposite party to remove the defect, replace the goods, return the price paid, pay compensation for loss or injury suffered due to negligence, discontinue an unfair trade practice, and pay adequate costs. It may also award punitive damages in appropriate circumstances.",
+      "plain": "They can order your money back, plus compensation for the trouble, plus your costs.",
+      "plain_hi": "Wo aapke paise wapas dilane, mushkil ke liye muavza, aur kharcha dilane ka order de sakte hain.",
+      "domains": [
+        "consumer"
+      ],
+      "use_when": "Explaining what outcome the user can realistically ask for.",
+      "confidence": "high",
+      "volatility": "low",
+      "source": "https://www.indiacode.nic.in/handle/123456789/15256"
+    },
+    {
+      "id": "CPA2019_S69",
+      "act": "Consumer Protection Act, 2019",
+      "act_short": "CPA 2019",
+      "section": "69",
+      "heading": "Deadline to file a consumer complaint",
+      "summary": "A consumer commission shall not admit a complaint unless it is filed within two years from the date on which the cause of action arose. A complaint filed after that period may still be admitted if the complainant satisfies the commission that there was sufficient cause for the delay, and the commission records its reasons for condoning the delay.",
+      "plain": "Two years from when the problem happened. Later is possible but you must explain the delay and they can refuse.",
+      "plain_hi": "Jab problem hui us din se do saal. Baad mein bhi ho sakta hai par deri ka kaaran batana padega aur wo mana bhi kar sakte hain.",
+      "domains": [
+        "consumer"
+      ],
+      "use_when": "Always, when the domain is consumer. Compute from the cause-of-action date.",
+      "confidence": "high",
+      "volatility": "low",
+      "source": "https://www.indiacode.nic.in/handle/123456789/15256"
+    },
+    {
+      "id": "CPA_EDAAKHIL",
+      "act": "e-Daakhil portal (Government of India)",
+      "act_short": "e-Daakhil (online filing)",
+      "section": "-",
+      "heading": "Filing a consumer complaint online",
+      "summary": "Consumer complaints can be filed online through the government's e-Daakhil portal at edaakhil.nic.in, without engaging a lawyer. The National Consumer Helpline on 1915 handles pre-litigation complaints and can often get a refund resolved without any filing at all.",
+      "plain": "You can file it yourself online. Try calling 1915 first; a lot of refunds get settled at that stage.",
+      "plain_hi": "Aap khud online file kar sakte hain. Pehle 1915 par call karke dekhein, kai refund wahin settle ho jaate hain.",
+      "domains": [
+        "consumer"
+      ],
+      "use_when": "Telling the user the concrete next step.",
+      "confidence": "high",
+      "volatility": "medium",
+      "source": "https://edaakhil.nic.in/"
+    },
+    {
+      "id": "PWA1936_S5",
+      "act": "Payment of Wages Act, 1936",
+      "act_short": "Payment of Wages Act 1936",
+      "section": "5",
+      "heading": "When wages must be paid",
+      "summary": "Where an establishment employs fewer than one thousand persons, wages must be paid before the expiry of the seventh day after the last day of the wage period. In other establishments, before the expiry of the tenth day. Where employment is terminated, the wages earned must be paid before the expiry of the second working day after the termination.",
+      "plain": "Monthly wages are due by the 7th (or 10th in very large workplaces). If you were let go, your dues are payable within two working days of being let go.",
+      "plain_hi": "Mahine ki salary 7 tarikh tak (bade workplace mein 10 tarikh tak) deni hoti hai. Agar aapko nikala gaya hai to do working din ke andar paisa dena hota hai.",
+      "domains": [
+        "salary"
+      ],
+      "use_when": "Establishing that the employer is already in default and from which date.",
+      "confidence": "high",
+      "volatility": "low",
+      "source": "https://www.indiacode.nic.in/handle/123456789/2318"
+    },
+    {
+      "id": "PWA1936_S1_6",
+      "act": "Payment of Wages Act, 1936",
+      "act_short": "Payment of Wages Act 1936",
+      "section": "1(6)",
+      "heading": "Who the Payment of Wages Act covers",
+      "summary": "The Act applies to employed persons whose average monthly wages do not exceed a ceiling fixed by the Central Government by notification. That ceiling was raised to Rs 24,000 per month in 2017.",
+      "plain": "This particular Act is for wages up to about Rs 24,000 a month. Above that you use a different route, which this assistant will point you to.",
+      "plain_hi": "Ye Act lagbhag Rs 24,000 mahina tak ki salary ke liye hai. Usse zyada ke liye doosra rasta hai.",
+      "domains": [
+        "salary"
+      ],
+      "use_when": "Deciding whether the Payment of Wages Authority route is open to this user.",
+      "confidence": "medium",
+      "volatility": "high",
+      "caveat": "The ceiling is set by notification and has been revised before. Confirm the current figure with the state Labour Department.",
+      "source": "https://labour.gov.in/"
+    },
+    {
+      "id": "PWA1936_S15",
+      "act": "Payment of Wages Act, 1936",
+      "act_short": "Payment of Wages Act 1936",
+      "section": "15",
+      "heading": "Claiming unpaid or delayed wages",
+      "summary": "The appropriate Government appoints an Authority to hear claims about deductions from wages and delay in payment of wages. The employed person, or a trade union official or inspector on their behalf, may apply to that Authority. The Authority can direct payment of the delayed wages together with compensation.",
+      "plain": "There is a dedicated officer for wage claims. You do not need a civil court and you do not need a lawyer to approach them.",
+      "plain_hi": "Salary ke liye alag se ek adhikari hote hain. Civil court ya vakeel ki zaroorat nahi.",
+      "domains": [
+        "salary"
+      ],
+      "use_when": "Naming the forum for a wage claim.",
+      "confidence": "high",
+      "volatility": "low",
+      "source": "https://www.indiacode.nic.in/handle/123456789/2318"
+    },
+    {
+      "id": "PWA1936_S15_2_LIMIT",
+      "act": "Payment of Wages Act, 1936",
+      "act_short": "Payment of Wages Act 1936",
+      "section": "15(2) proviso",
+      "heading": "Deadline for a wage claim to the Authority",
+      "summary": "An application to the Authority must be made within twelve months from the date on which the deduction was made or the wages became payable. An application may be admitted after that period if the applicant satisfies the Authority that there was sufficient cause for the delay.",
+      "plain": "Twelve months for this route, which is much shorter than most. Act quickly.",
+      "plain_hi": "Is raste ke liye baarah mahine. Ye kaafi kam samay hai, jaldi karein.",
+      "domains": [
+        "salary"
+      ],
+      "use_when": "Always, when the domain is salary. This is the tightest deadline the system handles.",
+      "confidence": "high",
+      "volatility": "low",
+      "source": "https://www.indiacode.nic.in/handle/123456789/2318"
+    },
+    {
+      "id": "ID1947_S33C2",
+      "act": "Industrial Disputes Act, 1947",
+      "act_short": "Industrial Disputes Act 1947",
+      "section": "33C(2)",
+      "heading": "Recovering money due from an employer",
+      "summary": "Where a workman is entitled to receive from the employer any money or any benefit capable of being computed in money, the Labour Court may determine the amount and issue a certificate for its recovery, on an application by the workman.",
+      "plain": "A second route for employees who count as 'workmen'. The Labour Court works out what you are owed and certifies it for recovery.",
+      "plain_hi": "'Workman' category ke logon ke liye doosra rasta. Labour Court hisaab lagakar recovery ka certificate deti hai.",
+      "domains": [
+        "salary"
+      ],
+      "use_when": "Wages above the Payment of Wages Act ceiling, or where that Act does not apply.",
+      "confidence": "medium",
+      "caveat": "Whether a person is a 'workman' excludes most managerial and supervisory roles above a pay threshold, and is frequently contested. This is a point on which a real lawyer should be consulted.",
+      "volatility": "low",
+      "source": "https://www.indiacode.nic.in/handle/123456789/1proxy"
+    },
+    {
+      "id": "CODEWAGES2019_STATUS",
+      "act": "Code on Wages, 2019",
+      "act_short": "Code on Wages 2019 (status)",
+      "section": "-",
+      "heading": "The new wage law and why this assistant does not rely on it",
+      "summary": "The Code on Wages, 2019 was enacted and is intended to consolidate and replace the Payment of Wages Act 1936, the Minimum Wages Act 1948 and related laws. Its provisions have been brought into force only in part, and the operative rules differ by state. Until it is fully in force in a given state, claims continue under the older Acts.",
+      "plain": "There is a newer wage law, but it has not fully replaced the old one everywhere yet, so this assistant advises under the older Act and flags the uncertainty.",
+      "plain_hi": "Ek naya wage kanoon hai par wo abhi har jagah poori tarah lagu nahi hua, isliye ye assistant purane Act ke hisaab se salah deta hai.",
+      "domains": [
+        "salary"
+      ],
+      "use_when": "Always include as a caveat on salary advice, so the user is not surprised if an official cites the Code instead.",
+      "confidence": "medium",
+      "volatility": "high",
+      "caveat": "Commencement status changes. Check the current position for your state before relying on either law.",
+      "source": "https://labour.gov.in/"
+    },
+    {
+      "id": "SHOPS_ESTAB_STATE",
+      "act": "State Shops and Commercial Establishments Acts",
+      "act_short": "State Shops & Establishments Act",
+      "section": "varies",
+      "heading": "The state law covering shops and offices",
+      "summary": "Every state has its own Shops and Commercial Establishments Act governing offices, shops and most private-sector workplaces. These lay down rules on wage payment, working hours, leave and termination notice, and they provide an inspector or authority to complain to. The content and the forum differ from state to state.",
+      "plain": "Your state has its own law for office and shop jobs, with its own complaint officer. Which one applies depends on where you work.",
+      "plain_hi": "Har rajya ka apna alag kanoon hai dukaan aur office ki naukri ke liye, aur apna shikayat adhikari.",
+      "domains": [
+        "salary"
+      ],
+      "use_when": "The user works in a private office or shop. Name it as a route but do not state specifics.",
+      "confidence": "high",
+      "volatility": "high",
+      "caveat": "This assistant does not hold the text of any individual state Act and must not state section numbers, notice periods or limits for one.",
+      "source": "https://labour.gov.in/"
+    },
+    {
+      "id": "TPA1882_S108",
+      "act": "Transfer of Property Act, 1882",
+      "act_short": "Transfer of Property Act 1882",
+      "section": "108",
+      "heading": "Rights and duties of landlord and tenant",
+      "summary": "In the absence of a contract to the contrary, section 108 sets out the respective rights and liabilities of the lessor and the lessee, including the lessee's obligation on the determination of the lease to put the lessor into possession of the property. The section operates subject to whatever the parties have actually agreed.",
+      "plain": "The baseline landlord-tenant rules, which your written agreement can override. This is why your agreement is the first document to look at.",
+      "plain_hi": "Makaan maalik aur kirayedar ke basic niyam, jinhe aapka likhit agreement badal sakta hai. Isliye pehle agreement dekhna zaroori hai.",
+      "domains": [
+        "deposit"
+      ],
+      "use_when": "Framing the legal basis of a tenancy relationship where no special state Act governs.",
+      "confidence": "medium",
+      "caveat": "Section 108 does not itself deal with security deposits. The claim for a deposit refund rests mainly on the contract.",
+      "volatility": "low",
+      "source": "https://www.indiacode.nic.in/handle/123456789/2338"
+    },
+    {
+      "id": "CONTRACT1872_S73",
+      "act": "Indian Contract Act, 1872",
+      "act_short": "Indian Contract Act 1872",
+      "section": "73",
+      "heading": "Compensation for breach of contract",
+      "summary": "When a contract is broken, the party who suffers is entitled to receive compensation for any loss or damage caused which naturally arose in the usual course of things from the breach, or which the parties knew when they made the contract would be likely to result from it. Compensation is not given for remote or indirect loss.",
+      "plain": "A security deposit is held under your rental agreement. Keeping it without a lawful reason is a breach of that agreement, and this is the provision you recover under.",
+      "plain_hi": "Security deposit aapke rent agreement ke tahat rakha jata hai. Bina wajah rokna agreement ka ullanghan hai, aur isi dhara ke tahat wasooli hoti hai.",
+      "domains": [
+        "deposit"
+      ],
+      "use_when": "This is the primary legal basis for a deposit refund claim in most states.",
+      "confidence": "high",
+      "volatility": "low",
+      "source": "https://www.indiacode.nic.in/handle/123456789/2187"
+    },
+    {
+      "id": "MTA2021_S11",
+      "act": "Model Tenancy Act, 2021",
+      "act_short": "Model Tenancy Act 2021",
+      "section": "11",
+      "heading": "Cap on security deposit",
+      "summary": "Under the Model Tenancy Act, the security deposit payable in advance is capped at two months' rent for residential premises and six months' rent for non-residential premises, and the deposit is to be refunded to the tenant at the time of taking over vacant possession, after making deductions for any lawful liability.",
+      "plain": "Two months' rent is the cap, and the deposit should come back when you hand over the keys, minus anything genuinely owed.",
+      "plain_hi": "Do mahine ke kiraye ki limit hai, aur chaabi wapas dete waqt deposit wapas milna chahiye, sirf jo sach mein bakaya hai wo kaat kar.",
+      "domains": [
+        "deposit"
+      ],
+      "use_when": "ONLY where the user's state has actually enacted a tenancy law based on this model. Otherwise cite it as persuasive context, never as binding law.",
+      "confidence": "high",
+      "volatility": "medium",
+      "caveat": "CRITICAL: this is a model law circulated to the states, not a central law in force across India. It binds nobody unless the user's state has enacted its own version. Do not tell a user this is 'the law' without establishing their state.",
+      "source": "https://mohua.gov.in/"
+    },
+    {
+      "id": "MTA2021_ADOPTION",
+      "act": "Model Tenancy Act, 2021",
+      "act_short": "Model Tenancy Act 2021 (adoption)",
+      "section": "-",
+      "heading": "Whether the Model Tenancy Act applies to you",
+      "summary": "The Model Tenancy Act was approved by the Union Cabinet in 2021 and circulated to states and union territories to adopt, either by enacting fresh legislation or by amending their existing rent laws. Land and tenancy are state subjects, so it has effect only where a state has actually legislated. Only a minority of states had done so as of the last review of this knowledge base.",
+      "plain": "Whether this helps you depends entirely on your state. In most states the older Rent Control Act or your plain rental agreement is what governs.",
+      "plain_hi": "Ye aapke rajya par depend karta hai. Zyadatar rajyon mein purana Rent Control Act ya aapka rent agreement hi chalta hai.",
+      "domains": [
+        "deposit"
+      ],
+      "use_when": "Whenever MTA2021_S11 is cited, this must be cited alongside it.",
+      "confidence": "medium",
+      "volatility": "high",
+      "caveat": "Adoption status changes. This assistant does not track which states have adopted it and must not claim a specific state has or has not.",
+      "source": "https://mohua.gov.in/"
+    },
+    {
+      "id": "RENT_CONTROL_STATE",
+      "act": "State Rent Control / Tenancy Acts",
+      "act_short": "State Rent Act",
+      "section": "varies",
+      "heading": "Your state's own rent law",
+      "summary": "Most states have a Rent Control or Tenancy Act of their own, which may set up a Rent Controller or Rent Tribunal with exclusive jurisdiction over certain landlord-tenant disputes. Whether a deposit dispute goes to that authority or to an ordinary civil court depends on the state statute and sometimes on the rent amount or the age of the building.",
+      "plain": "Many states route landlord-tenant disputes to a special Rent Controller rather than a regular court. Which applies to you depends on your state.",
+      "plain_hi": "Kai rajyon mein makaan maalik-kirayedar ke jhagde Rent Controller ke paas jaate hain, normal court mein nahi. Ye aapke rajya par depend karta hai.",
+      "domains": [
+        "deposit"
+      ],
+      "use_when": "Explaining why the forum answer for deposits is state-dependent.",
+      "confidence": "high",
+      "volatility": "high",
+      "caveat": "This assistant does not hold any individual state Rent Act and must not state its sections, limits or procedure.",
+      "source": "https://www.indiacode.nic.in/"
+    },
+    {
+      "id": "TENANCY_NOT_CONSUMER",
+      "act": "Consumer Protection Act, 2019 (scope)",
+      "act_short": "CPA 2019 (scope: tenancy)",
+      "section": "2(7), 2(42)",
+      "heading": "Why a consumer forum usually will not take a deposit case",
+      "summary": "A landlord letting out premises is generally not treated as rendering a 'service' to the tenant for consideration in the sense the Consumer Protection Act uses, so a pure landlord-tenant dispute about rent or a security deposit is ordinarily outside the consumer commissions' jurisdiction and belongs in a civil court or before the authority under the state rent law.",
+      "plain": "Do not file a deposit case in the consumer forum expecting it to stick. That is a common and costly mistake.",
+      "plain_hi": "Deposit ka case consumer forum mein file na karein, wo aam taur par nahi chalta. Ye ek aam aur mehngi galti hai.",
+      "domains": [
+        "deposit"
+      ],
+      "use_when": "The user asks whether they can use the consumer forum for a deposit. Steer them correctly.",
+      "confidence": "medium",
+      "caveat": "This is the general position and there are decisions going the other way on particular facts, for example where the landlord provides bundled services. A lawyer can advise on whether an exception fits.",
+      "volatility": "medium",
+      "source": "https://www.indiacode.nic.in/handle/123456789/15256"
+    },
+    {
+      "id": "SMALL_CAUSES",
+      "act": "Provincial Small Cause Courts Act, 1887 / Presidency Small Cause Courts Act, 1882",
+      "act_short": "Small Causes Courts Acts",
+      "section": "-",
+      "heading": "The small claims route for money recovery",
+      "summary": "Suits for recovery of money of a small value are triable by Courts of Small Causes under a simplified procedure that is faster than an ordinary civil suit. The monetary ceiling for what counts as a small cause is fixed by each state and varies widely.",
+      "plain": "For a modest deposit amount there is a faster, simpler court than a full civil suit.",
+      "plain_hi": "Choti rakam ke liye poore civil suit se tez aur aasan adalat hoti hai.",
+      "domains": [
+        "deposit"
+      ],
+      "use_when": "Suggesting a proportionate forum for a deposit recovery claim.",
+      "confidence": "medium",
+      "volatility": "high",
+      "caveat": "The ceiling is state-specific and this assistant does not hold it. Do not state a figure.",
+      "source": "https://www.indiacode.nic.in/"
+    },
+    {
+      "id": "LIMITATION1963_ART55",
+      "act": "Limitation Act, 1963",
+      "act_short": "Limitation Act 1963",
+      "section": "Schedule, Article 55",
+      "heading": "Three years for breach of contract",
+      "summary": "For compensation for the breach of a contract, the period of limitation is three years, running from the date when the contract is broken, or where there are successive breaches, when the breach in respect of which the suit is instituted occurs.",
+      "plain": "Three years from the day they refused or failed to pay. After that a court can refuse to hear it at all.",
+      "plain_hi": "Jis din unhone dene se mana kiya ya nahi diya, us din se teen saal. Uske baad adalat sunne se mana kar sakti hai.",
+      "domains": [
+        "deposit",
+        "salary"
+      ],
+      "use_when": "Computing the deadline for a civil claim, including a deposit refund suit.",
+      "confidence": "high",
+      "volatility": "low",
+      "caveat": "Which Article of the Schedule applies depends on how the claim is framed; a deposit claim may fall under Article 55 or the residuary Article 113. Both give three years.",
+      "source": "https://www.indiacode.nic.in/handle/123456789/1595"
+    },
+    {
+      "id": "LIMITATION1963_S3",
+      "act": "Limitation Act, 1963",
+      "act_short": "Limitation Act 1963",
+      "section": "3",
+      "heading": "What happens if you are late",
+      "summary": "Every suit instituted, appeal preferred and application made after the prescribed period shall be dismissed, even though limitation has not been set up as a defence. The court is required to apply the bar on its own.",
+      "plain": "Being late is not something the other side has to raise. The court throws it out by itself. This is why the deadline matters more than anything else in your case.",
+      "plain_hi": "Deri hone par doosri party ko kuch kehna nahi padta, adalat khud hi case khaarij kar deti hai. Isliye deadline sabse zyada zaroori hai.",
+      "domains": [
+        "deposit",
+        "salary",
+        "consumer"
+      ],
+      "use_when": "Explaining why the limitation calculation is the most urgent part of the advice.",
+      "confidence": "high",
+      "volatility": "low",
+      "source": "https://www.indiacode.nic.in/handle/123456789/1595"
+    },
+    {
+      "id": "LSA1987_S12",
+      "act": "Legal Services Authorities Act, 1987",
+      "act_short": "Legal Services Authorities Act 1987",
+      "section": "12",
+      "heading": "Who gets a free lawyer",
+      "summary": "Free legal services are available to, among others, a member of a Scheduled Caste or Scheduled Tribe, a woman, a child, a person with a disability, an industrial workman, a person in custody, a victim of trafficking or mass disaster, and any person whose annual income is below the limit prescribed by the relevant government.",
+      "plain": "A free lawyer is a legal right for many people, not a favour. Women and industrial workmen qualify regardless of income.",
+      "plain_hi": "Muft vakeel kai logon ka kanooni adhikaar hai, ehsaan nahi. Mahilayein aur industrial workman income chahe jo ho, haqdaar hain.",
+      "domains": [
+        "deposit",
+        "salary",
+        "consumer",
+        "general"
+      ],
+      "use_when": "Always, when advising that a real lawyer is needed. Check eligibility before saying a lawyer is unaffordable.",
+      "confidence": "high",
+      "volatility": "medium",
+      "caveat": "The income limit is set separately by each state and by the Supreme Court Legal Services Committee. Do not state a figure.",
+      "source": "https://nalsa.gov.in/"
+    },
+    {
+      "id": "NALSA_HELPLINE",
+      "act": "National Legal Services Authority",
+      "act_short": "NALSA (free legal aid)",
+      "section": "-",
+      "heading": "Free legal help: who to call",
+      "summary": "The National Legal Services Authority operates a national legal aid helpline on 15100. Every district has a District Legal Services Authority, usually located in the district court complex, which provides free legal advice and can appoint a lawyer for eligible persons. Lok Adalats held by these authorities can settle money disputes quickly and the settlement is binding.",
+      "plain": "Call 15100, free. Or walk into the District Legal Services Authority at your district court. Both cost nothing.",
+      "plain_hi": "15100 par free call karein. Ya apne district court mein District Legal Services Authority jaayein. Dono muft hain.",
+      "domains": [
+        "deposit",
+        "salary",
+        "consumer",
+        "general"
+      ],
+      "use_when": "Every escalation to a human lawyer must carry this.",
+      "confidence": "high",
+      "volatility": "low",
+      "source": "https://nalsa.gov.in/"
+    },
+    {
+      "id": "NCH_HELPLINE",
+      "act": "National Consumer Helpline (Department of Consumer Affairs)",
+      "act_short": "National Consumer Helpline",
+      "section": "-",
+      "heading": "The consumer helpline",
+      "summary": "The National Consumer Helpline on 1915 takes consumer grievances before any formal filing and takes them up with the company directly. Many refund disputes are resolved at this stage without a complaint being filed.",
+      "plain": "Call 1915 first. It is free, it is fast, and it often works without any paperwork.",
+      "plain_hi": "Pehle 1915 par call karein. Muft hai, tez hai, aur aksar bina kaagaz ke kaam ho jata hai.",
+      "domains": [
+        "consumer"
+      ],
+      "use_when": "The cheapest first step for any consumer matter.",
+      "confidence": "high",
+      "volatility": "low",
+      "source": "https://consumerhelpline.gov.in/"
+    },
+    {
+      "id": "LEGAL_NOTICE_PRACTICE",
+      "act": "General civil practice",
+      "act_short": "Practice note: legal notices",
+      "section": "-",
+      "heading": "What a legal notice does and does not do",
+      "summary": "A legal notice is a formal written demand sent before starting proceedings. For most private civil claims, including a security deposit refund and a consumer complaint, it is not a legal precondition to filing. It is nonetheless useful: it creates a dated record of the demand and the refusal, it often produces payment without litigation, and it marks the point from which the other side cannot claim ignorance. Sending it by registered post with acknowledgement due, or by a traceable email, preserves proof of service.",
+      "plain": "A notice is usually not compulsory, but it is cheap, it creates a paper trail, and it very often gets you paid without going further.",
+      "plain_hi": "Notice aam taur par zaroori nahi hota, par sasta hai, record ban jata hai, aur aksar bina aage gaye paisa mil jata hai.",
+      "domains": [
+        "deposit",
+        "salary",
+        "consumer",
+        "general"
+      ],
+      "use_when": "Before drafting a notice, so the user knows what it is for.",
+      "confidence": "high",
+      "volatility": "low",
+      "caveat": "Some specific claims do require a statutory notice with its own deadline. None of the three domains this assistant covers is one of them, but a lawyer should confirm for anything outside them.",
+      "source": "https://nalsa.gov.in/"
+    },
+    {
+      "id": "EVIDENCE_PRACTICE",
+      "act": "General civil practice",
+      "act_short": "Practice note: evidence",
+      "section": "-",
+      "heading": "What proof is worth having",
+      "summary": "Contemporaneous written records carry the most weight: the signed agreement or appointment letter, bank statements showing the payment and its purpose, dated receipts, and written exchanges such as email or messaging threads in which the other side acknowledges the amount or promises to pay. An admission by the other side in writing is often worth more than several witnesses. Where a payment was made in cash with no receipt, a bank withdrawal of the matching amount on the matching date is useful corroboration but is weaker.",
+      "plain": "Anything in writing where they admit the amount is your strongest card. Bank records beat memory. Save the screenshots now.",
+      "plain_hi": "Likhit mein jahan wo rakam maante hain, wo aapka sabse majboot sabooot hai. Bank record yaad se behtar hai. Screenshot abhi save kar lein.",
+      "domains": [
+        "deposit",
+        "salary",
+        "consumer",
+        "general"
+      ],
+      "use_when": "During intake, to tell the user what to go and find.",
+      "confidence": "high",
+      "volatility": "low",
+      "source": "https://nalsa.gov.in/"
+    }
+  ]
+}

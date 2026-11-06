@@ -1,0 +1,10 @@
+# The whole legal pipeline (parse -> case file -> deadline -> forum -> guard)
+# is standard library only. `python run.py` and `python check_guard.py` need
+# nothing installed at all.
+
+streamlit>=1.40        # the chat UI in app.py
+
+# Model providers -- install only the one you use. None is required; the
+# default `--model template` runs with no model and no network.
+google-genai>=1.0      # --model gemini:<model>
+requests>=2.31         # --model groq:<model> / openai:<model> / openrouter:<model>

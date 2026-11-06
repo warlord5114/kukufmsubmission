@@ -1,0 +1,13 @@
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env
+.DS_Store
+.idea/
+.vscode/
+
+# Model round-trip scratch from `--model manual:...`. The committed evidence
+# lives in outputs/; these are working files.
+outputs/llm/prompts/
+outputs/llm/responses/

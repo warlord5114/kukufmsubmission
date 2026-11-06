@@ -1,0 +1,225 @@
+{
+  "case": {
+    "domain": "consumer",
+    "domain_label": "Refund for goods or services",
+    "lang": "en",
+    "facts": {
+      "amount": 7500000.0,
+      "state": "Noida",
+      "problem_on": "2026-04-20",
+      "what_bought": "yes I have the builder buyer agreement and all payment receipts",
+      "has_proof_of_payment": true
+    },
+    "flags": [],
+    "notes": [
+      "classified as consumer (confidence 1.0, scores {'deposit': 0, 'salary': 0, 'consumer': 9})",
+      "paid_on: asked twice, no usable answer; skipped"
+    ],
+    "complete": true,
+    "completeness": [
+      4,
+      5
+    ]
+  },
+  "checks": [
+    {
+      "check": "domain",
+      "pass": true,
+      "detail": "got 'consumer', want 'consumer'"
+    },
+    {
+      "check": "forum_present",
+      "pass": true,
+      "detail": "got ['nch', 'state_commission']"
+    },
+    {
+      "check": "forum_absent",
+      "pass": true,
+      "detail": "got ['nch', 'state_commission']"
+    },
+    {
+      "check": "disclaimer_shown",
+      "pass": true,
+      "detail": "no disclaimer in the consultation"
+    },
+    {
+      "check": "no_case_law_anywhere",
+      "pass": true,
+      "detail": "unredacted case law present"
+    }
+  ],
+  "session_id": "39d99dfc",
+  "stage": "assessed",
+  "assessment": {
+    "case": {
+      "domain": "consumer",
+      "domain_label": "Refund for goods or services",
+      "lang": "en",
+      "facts": {
+        "amount": 7500000.0,
+        "state": "Noida",
+        "problem_on": "2026-04-20",
+        "what_bought": "yes I have the builder buyer agreement and all payment receipts",
+        "has_proof_of_payment": true
+      },
+      "flags": [],
+      "notes": [
+        "classified as consumer (confidence 1.0, scores {'deposit': 0, 'salary': 0, 'consumer': 9})",
+        "paid_on: asked twice, no usable answer; skipped"
+      ],
+      "complete": true,
+      "completeness": [
+        4,
+        5
+      ]
+    },
+    "deadline": {
+      "rule_key": "consumer",
+      "label": "2 years",
+      "runs_from_date": "2026-04-20",
+      "runs_from_desc": "the date the problem arose or the refund was refused",
+      "expires_on": "2028-04-20",
+      "days_left": 531,
+      "expired": false,
+      "urgent": false,
+      "condonable": true,
+      "condonation_note": "The commission may admit a late complaint if you show sufficient cause and it records reasons.",
+      "cites": [
+        "CPA2019_S69"
+      ]
+    },
+    "forums": [
+      {
+        "id": "nch",
+        "name": "National Consumer Helpline (1915)",
+        "stage": "before filing",
+        "how": "Call 1915 or file at consumerhelpline.gov.in. They take it up with the company directly.",
+        "fee": null,
+        "fee_label": "Free",
+        "lawyer_needed": false,
+        "typical_time": "days to a few weeks",
+        "caveat": "",
+        "cites": [
+          "NCH_HELPLINE"
+        ]
+      },
+      {
+        "id": "state_commission",
+        "name": "State Consumer Disputes Redressal Commission",
+        "stage": "formal",
+        "how": "File at the State Commission for your state, or online at edaakhil.nic.in.",
+        "fee": 2000,
+        "fee_label": "₹2,000",
+        "lawyer_needed": false,
+        "typical_time": "longer than the District Commission",
+        "caveat": "",
+        "cites": [
+          "CPA2021_PECUNIARY_RULES",
+          "CPA_EDAAKHIL"
+        ]
+      }
+    ],
+    "escalations": [
+      {
+        "rule_id": "large_amount",
+        "trigger": "amount_above_2000000",
+        "message": "The amount here is large enough that a lawyer's fee is small by comparison.",
+        "urgency": "medium",
+        "extra": ""
+      }
+    ],
+    "must_see_lawyer": false,
+    "citation_ids": [
+      "CPA2019_S69",
+      "NCH_HELPLINE",
+      "CPA2021_PECUNIARY_RULES",
+      "CPA_EDAAKHIL",
+      "CPA2019_S2_7",
+      "CPA2019_S2_11",
+      "CPA2019_S2_47",
+      "CPA2019_S34",
+      "CPA2019_S38_7",
+      "CPA2019_S39",
+      "LIMITATION1963_S3",
+      "LSA1987_S12",
+      "NALSA_HELPLINE",
+      "LEGAL_NOTICE_PRACTICE",
+      "EVIDENCE_PRACTICE"
+    ]
+  },
+  "transcript": [
+    {
+      "who": "user",
+      "text": "I paid a builder 7500000 for a flat in Noida on 14 January 2025. Possession was promised in March 2026 and the project has not moved. They refuse to refund.",
+      "stage": "triage",
+      "guard": null
+    },
+    {
+      "who": "assistant",
+      "text": "Got it — this looks like **Refund for goods or services**. I need a few facts before I can tell you anything useful.\n\n**(1/5)** What date did you pay?",
+      "stage": "intake",
+      "guard": null
+    },
+    {
+      "who": "user",
+      "text": "a flat that was never delivered",
+      "stage": "intake",
+      "guard": null
+    },
+    {
+      "who": "assistant",
+      "text": "**(1/5)** What date did you pay?",
+      "stage": "intake",
+      "guard": null
+    },
+    {
+      "who": "user",
+      "text": "they refused on 20 April 2026",
+      "stage": "intake",
+      "guard": null
+    },
+    {
+      "who": "assistant",
+      "text": "**(2/5)** What did you buy, and what went wrong?",
+      "stage": "intake",
+      "guard": null
+    },
+    {
+      "who": "user",
+      "text": "yes I have the builder buyer agreement and all payment receipts",
+      "stage": "intake",
+      "guard": null
+    },
+    {
+      "who": "assistant",
+      "text": "**(3/5)** Do you have the bill, order confirmation or bank statement?",
+      "stage": "intake",
+      "guard": null
+    },
+    {
+      "who": "user",
+      "text": "yes I have written to them many times",
+      "stage": "intake",
+      "guard": null
+    },
+    {
+      "who": "assistant",
+      "text": "So you paid ₹75,00,000 for yes I have the builder buyer agreement and all payment receipts and the refund has not come through. Here is where you stand.\n\n## Where you stand — ₹75,00,000\n\n### ⏳ Your deadline\n\n🟢 **You have about 531 days left.**\n\nYou have **2 years** from **20 April 2026** (the date the problem arose or the refund was refused). That runs out on **20 April 2028**.\n\n### 🏛️ Where to go\n\n**Try these first — they are free and often enough:**\n\n- **National Consumer Helpline (1915)** — Call 1915 or file at consumerhelpline.gov.in. They take it up with the company directly.\n  - Usually takes: days to a few weeks\n\n**If that does not work:**\n\n- **State Consumer Disputes Redressal Commission** — fee ₹2,000; longer than the District Commission; you can do this yourself\n  - File at the State Commission for your state, or online at edaakhil.nic.in.\n\n### 📄 What to gather\n\n**You already have:**\n\n- ✅ proof that you paid (bank entry, receipt or bill)\n\nAnything in writing where they admit the amount is your strongest card. Bank records beat memory. Save the screenshots now.\n\n### ✅ What to do next\n\n1. Put **20 April 2028** in your phone calendar now. That is your hard deadline.\n2. Call 1915 or file at consumerhelpline.gov.in. They take it up with the company directly.\n3. Save your evidence somewhere it cannot be lost: screenshot the chats, download the bank statement, photograph the agreement.\n4. If that fails: State Consumer Disputes Redressal Commission.\n\n### 🚨 You should speak to a real lawyer\n\n- 🟡 The amount here is large enough that a lawyer's fee is small by comparison.\n\nFree legal aid: call **15100** (NALSA), or walk into the District Legal Services Authority at your district court. Both are free.\n\n_A free lawyer is a legal right for many people, not a favour. Women and industrial workmen qualify regardless of income._\n\n---\n\n_This is general legal information, not legal advice, and this is not a lawyer. It covers three problems only and can be wrong. Check anything important with a real lawyer before you act on it — free legal aid is available on **15100**._\n\n---\n\n**What this is based on**\n\n- **CPA 2019, s. 69** — Deadline to file a consumer complaint\n- **National Consumer Helpline** — The consumer helpline\n- **CPA Jurisdiction Rules 2021, Rules 3-5** — Money limits of each consumer commission\n  - ⚠️ These limits were revised in 2021 and were different before. Confirm the current figures on e-Daakhil before filing.\n- **e-Daakhil (online filing)** — Filing a consumer complaint online\n- **Practice note: evidence** — What proof is worth having\n- **Legal Services Authorities Act 1987, s. 12** — Who gets a free lawyer\n  - ⚠️ The income limit is set separately by each state and by the Supreme Court Legal Services Committee. Do not state a figure.\n- **NALSA (free legal aid)** — Free legal help: who to call\n\n_Plain-language summaries written for this tool, not quotations from the statute. Every one links to the original — check it before you rely on it in anything you file._\n\n---\n\n**What else I can do**\n\n- `notice` — draft a legal notice you can send\n- `practice` — rehearse the argument against the other side\n- `summary` — your case file, to save or show a lawyer",
+      "stage": "assessed",
+      "guard": {
+        "clean": true,
+        "worst_severity": "none",
+        "blocked": false,
+        "used_citations": [],
+        "rejected_citations": [],
+        "findings": []
+      }
+    }
+  ],
+  "guard": {
+    "reports": 1,
+    "total_findings": 0,
+    "clean": true,
+    "findings": []
+  }
+}

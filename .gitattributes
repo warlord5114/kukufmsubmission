@@ -1,0 +1,5 @@
+# Keep the repo LF-normalised so it is identical on a reviewer's machine.
+* text=auto eol=lf
+*.png binary
+*.jpg binary
+*.pdf binary

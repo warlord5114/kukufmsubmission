@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Nyaya Mitra — Solution Doc</title>
+<style>
+  @page { size: A4; margin: 13mm 14mm; }
+  :root { --ink:#15181d; --mut:#5a6169; --line:#d9dde2; --accent:#1f4f8f; --warn:#8a4b00; }
+  * { box-sizing: border-box; }
+  body {
+    font: 9.6pt/1.42 "Georgia","Iowan Old Style",serif;
+    color: var(--ink); margin: 0 auto; max-width: 190mm; padding: 10mm;
+    -webkit-print-color-adjust: exact; print-color-adjust: exact;
+  }
+  h1 { font: 700 17pt/1.15 "Helvetica Neue",Arial,sans-serif; margin: 0 0 1mm; letter-spacing:-.2px; }
+  .sub { font: 8.6pt/1.3 "Helvetica Neue",Arial,sans-serif; color: var(--mut);
+         margin: 0 0 3mm; padding-bottom: 2.5mm; border-bottom: 2px solid var(--ink); }
+  h2 { font: 700 10.6pt/1.2 "Helvetica Neue",Arial,sans-serif; margin: 4mm 0 1.6mm;
+       color: var(--accent); break-after: avoid; }
+  h3 { font: 700 9.4pt/1.2 "Helvetica Neue",Arial,sans-serif; margin: 3mm 0 1.2mm; break-after:avoid; }
+  p { margin: 0 0 1.8mm; text-align: justify; }
+  ul { margin: 0 0 1.8mm; padding-left: 4.6mm; }
+  li { margin-bottom: 0.9mm; }
+  strong { font-weight: 700; }
+  em { font-style: italic; }
+  code { font: 8.4pt "SF Mono",Consolas,monospace; background:#eef1f4; padding:0 2px; border-radius:2px; }
+  table { width:100%; border-collapse: collapse; margin: 1.5mm 0 2.5mm; font-size: 9pt; }
+  th,td { border: 1px solid var(--line); padding: 1.1mm 1.8mm; text-align: left; vertical-align: top; }
+  th { background:#eef1f4; font: 700 8.8pt "Helvetica Neue",Arial,sans-serif; }
+  td.k { white-space: nowrap; font-weight: 700; width: 26mm; }
+  .cols { display: grid; grid-template-columns: 1fr 1fr; gap: 0 7mm; }
+  .box { border-left: 3px solid var(--accent); background:#f4f7fb; padding: 2mm 3mm; margin: 2mm 0; }
+  .warnbox { border-left: 3px solid var(--warn); background:#fdf6ec; padding: 2mm 3mm; margin: 2mm 0; }
+  .quote { font-size: 8.8pt; border-left: 2px solid var(--line); padding-left: 3mm;
+           margin: 1.2mm 0; color: #333; }
+  .res { display:flex; gap: 3mm; margin: 2mm 0 2.5mm; }
+  .res div { flex:1; border:1px solid var(--line); border-radius:3px; padding: 1.8mm 2mm; text-align:center; }
+  .res b { display:block; font: 700 13pt "Helvetica Neue",Arial,sans-serif; color: var(--accent); }
+  .res span { font-size: 8pt; color: var(--mut); }
+  .foot { margin-top: 3mm; padding-top: 2mm; border-top: 1px solid var(--line);
+          font-size: 8.2pt; color: var(--mut); }
+  .pb { break-before: page; }
+  pre.flow { font: 8pt/1.25 "SF Mono",Consolas,monospace; background:#f4f7fb;
+             border:1px solid var(--line); border-radius:3px; padding: 2mm; margin: 1.5mm 0 2.5mm;
+             white-space: pre; overflow: hidden; }
+</style>
+</head>
+<body>
+
+<h1>Nyaya Mitra — an AI lawyer that cannot invent law</h1>
+<p class="sub"><strong>Problem 2</strong> · Kuku AI Generalist Assignment ·
+Security deposits, unpaid salary, consumer refunds · English / Hindi / Hinglish</p>
+
+<h2>Why this problem</h2>
+<p>Problem 1 is a ranking task with a human already in the loop: an editor sees every promo
+before it ships, so a bad suggestion costs a few minutes. Problem 2 has no such backstop.
+Someone with no money and no lawyer will <em>act</em> on what the tool says — send a notice,
+miss a deadline, walk into the wrong forum — and a confident wrong answer does real harm.
+That asymmetry is why I picked it, and the brief points straight at the hard part:
+<em>“AI models confidently invent laws, sections and past cases, so tell us how yours avoids
+that.”</em> I treated that sentence as the whole specification.</p>
+
+<h2>Assumptions where the brief was silent</h2>
+<table>
+<tr><td class="k">Scope</td><td>Three problems in depth, not many in breadth. Depth is what lets the tool name a <em>forum</em> and a <em>deadline</em> instead of giving general encouragement.</td></tr>
+<tr><td class="k">Language</td><td>English, Devanagari Hindi and Romanised Hinglish — Hinglish because that is how most people actually type. Not other languages: I would be generating legal phrasing I cannot verify, which contradicts the point of the build.</td></tr>
+<tr><td class="k">The user</td><td>Has a phone, not a lawyer, and wants to know <em>what to do on Monday</em>. So the output is a deadline, a place to go, a fee and a next step.</td></tr>
+<tr><td class="k">Success</td><td>One correct concrete step the person would not otherwise have taken — usually a written demand or a notice, not litigation.</td></tr>
+<tr><td class="k">No case law</td><td>A deliberate capability gap, explained below.</td></tr>
+</table>
+
+<h2>How it works</h2>
+<p>The system is split by what <strong>must</strong> be right.</p>
+
+<pre class="flow">  story ──► [ extract ] ◄── model      ┌─ kb/provisions.json ────────┐
+                 │                     │ 30 hand-written entries,    │
+          structured facts             │ source-linked. The ONLY     │
+                 ▼                     │ law that may be cited.      │
+   ┌─────────────────────────┐         └─────────────┬───────────────┘
+   │ casefile.py — NO MODEL  │                       │ only these ids
+   │ deadline · forum · fee  │       model prose ──► │
+   │ escalation to a human   │                 [ guard.py ]
+   └───────────┬─────────────┘                       │ stripped + reported
+               └─────────────────────────────►  what the person sees</pre>
+
+<p><strong>Computed, never generated.</strong> The limitation deadline, days remaining, the
+forum, the filing-fee slab and the decision to escalate to a real lawyer are arithmetic over
+the dates the person gave. A model is confidently wrong about exactly these — it invents a
+pecuniary limit, it miscounts twelve months — so it never touches them. Every number on
+screen can be recomputed by hand.</p>
+
+<p><strong>The model does three narrow jobs:</strong> read a messy story into a form (it is
+genuinely better than regex at <em>“maine 10 August ko ghar khaali kiya”</em>), say the
+situation back in the person’s language, and write one factual paragraph of a notice. It is
+given no legal authority in any of them.</p>
+
+<p><strong>Everything it writes passes a guard:</strong></p>
+<ul>
+<li><strong>Citations are ids.</strong> The model may only emit <code>[[CPA2019_S69]]</code>; the id must exist in the KB <em>and</em> have been supplied for that turn; the visible citation text is rendered by us from the KB. The words of the law never come from the model.</li>
+<li><strong>Loose references are caught</strong> — and so is the sentence around them. Removing only the citation from <em>“under Section 23 of the Tenancy Rules he owes a penalty”</em> leaves the invented penalty standing, which is the more believable half.</li>
+<li><strong>Case law is always refused.</strong> The KB holds no judgments, so there is nothing to check one against. Every case-shaped string is treated as fabricated whether or not it happens to be real.</li>
+</ul>
+
+<div class="pb"></div>
+
+<h2>How I know it is good</h2>
+<div class="res">
+  <div><b>15/15</b><span>adversarial model outputs<br>blocked or correctly passed</span></div>
+  <div><b>84/84</b><span>functional checks across<br>15 scripted consultations</span></div>
+  <div><b>126</b><span>unit checks: arithmetic,<br>parsing, escalation, guard</span></div>
+</div>
+
+<p>The adversarial corpus is the real evidence. It holds the failures a general model actually
+produces: an invented section for a rule with no statutory basis, a fabricated Supreme Court
+judgment, the Negotiable Instruments Act applied to a tenancy dispute, IPC sections for a
+civil debt, UK housing law, Article 21 for a money claim — plus <strong>two correct answers
+that must survive untouched</strong>, because a filter that mangles good output gets switched
+off within a week.</p>
+
+<div class="box">
+<p style="margin-bottom:1mm"><strong>The model produced:</strong></p>
+<p class="quote">“In Sharma v. Gupta (2018) 7 SCC 412, the Supreme Court held that a landlord
+withholding a security deposit without itemised proof commits an unfair trade practice. You
+can rely on this directly.”</p>
+<p style="margin:1.5mm 0 1mm"><strong>The user saw:</strong></p>
+<p class="quote">“<em>[A claim about case law was removed here: this assistant has no verified
+database of judgments and will not cite them.]</em> You can rely on this directly.”</p>
+</div>
+
+<h2>Where it fails</h2>
+<ul>
+<li><strong>State law is the hole.</strong> Tenancy and shops-and-establishments law is state-specific and the KB has none of it. The system names the route and refuses to state a section or a limit. Correct, but unsatisfying: a user in Maharashtra gets “check your state’s Rent Act”, not an answer.</li>
+<li><strong>No case law at all</strong>, by design. A real lawyer cites precedent; this cannot, and says so.</li>
+<li><strong>Volatile numbers go stale.</strong> Pecuniary limits, fees and the wage ceiling are flagged <code>volatility: high</code> and dated. They need a human to re-check, not a model.</li>
+<li><strong>Extraction is the weakest component.</strong> Two bugs worth naming, both caught by test cases rather than by reading code: Hindi and Hinglish are verb-final, so every date arrived <em>before</em> the verb and my English-ordered patterns dropped all of them — and no date means no deadline, the single most important output. Separately, Python’s <code>\b</code> does not work around Devanagari (matras are non-spacing marks, not word characters), so every Hindi keyword silently scored zero.</li>
+<li><strong>The guard is regex over English-shaped legal references.</strong> A model writing invented law in fluent Hindi prose would evade it. First thing I would fix.</li>
+</ul>
+
+<h2>How it scales to every problem, and what it costs</h2>
+<p>Cost is near zero and flat: ~900 input / ~350 output tokens per grounded answer, so a full
+consultation is under 10k tokens — inside the Gemini free tier, a fraction of a paisa on paid
+Flash. The expensive part is not inference. It is the knowledge base, and that is a human
+writing thirty entries once per domain.</p>
+<p>That is the honest scaling story: <strong>adding a problem is a day of careful writing, not
+a prompt change.</strong> A legal-aid NGO could own <code>provisions.json</code> without
+touching code, and load-time validation means a mistake in it stops the program rather than
+reaching a user. The whole pipeline is standard library only, so it runs offline on a cheap
+machine with no model at all — losing the conversational polish and keeping every legal
+guarantee. Swapping to a stronger model is a flag (<code>--model gemini:…</code>); no vendor
+SDK is imported outside its own adapter file.</p>
+<p>Humans stay in the loop in two places that matter: rule-based escalation hands off to a
+real lawyer on safety, criminal matters, expired limitation and anything out of scope; and
+every notice is marked a draft for the user to check before sending.</p>
+
+<h2>AI tools, and where they got it wrong</h2>
+<p>Built with Claude (Claude Code) throughout — architecture, knowledge-base drafting, code.
+I used it hard and checked it harder.</p>
+<div class="warnbox">
+<p style="margin:0"><strong>Where it got it wrong.</strong> Asked to draft the knowledge base,
+it produced confident, fluent, wrongly-numbered provisions — a “Section 17 of the Model
+Tenancy Act” for deposit refund timelines, and a Supreme Court judgment that does not exist.
+That is not a footnote to this project; it <em>is</em> the project. I kept those outputs, put
+them in <code>testcases/hallucinations.json</code>, and built the guard to catch exactly them.
+The tool that wrote the system also generated its adversarial test set, by failing.</p>
+</div>
+<p>A second, smaller one: it initially wrote the Hindi interface strings in Romanised Hindi
+for Devanagari users. Fluent, friendly, and the small discourtesy that tells someone a tool
+was not built for them.</p>
+
+<p class="foot">
+<strong>Run it:</strong> <code>python run.py</code> — no API key, no network, no account.
+<strong>Evidence:</strong> <code>outputs/guard_report.md</code> (before/after for all 15
+adversarial items), <code>outputs/report.md</code>, <code>outputs/*.md</code> (every
+consultation). <strong>Tests:</strong> <code>python check_guard.py</code>,
+<code>python tests/test_nyaya.py</code>.<br>
+<em>This is not a lawyer and not legal advice. Free legal aid in India: <strong>15100</strong>
+(NALSA), or the District Legal Services Authority at any district court.</em>
+</p>
+
+</body>
+</html>

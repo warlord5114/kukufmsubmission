@@ -1,0 +1,65 @@
+{
+  "case": {
+    "domain": null,
+    "domain_label": null,
+    "lang": "en",
+    "facts": {},
+    "flags": [],
+    "notes": [],
+    "complete": false,
+    "completeness": [
+      0,
+      0
+    ]
+  },
+  "checks": [
+    {
+      "check": "domain",
+      "pass": true,
+      "detail": "got None, want None"
+    },
+    {
+      "check": "refuses_out_of_scope",
+      "pass": true,
+      "detail": "did not clearly refuse"
+    },
+    {
+      "check": "points_to_legal_aid",
+      "pass": true,
+      "detail": "15100 not offered"
+    },
+    {
+      "check": "disclaimer_shown",
+      "pass": true,
+      "detail": "no disclaimer in the consultation"
+    },
+    {
+      "check": "no_case_law_anywhere",
+      "pass": true,
+      "detail": "unredacted case law present"
+    }
+  ],
+  "session_id": "580a1013",
+  "stage": "triage",
+  "assessment": null,
+  "transcript": [
+    {
+      "who": "user",
+      "text": "My husband and I are separating and I want to know about custody of our daughter and how much maintenance I can claim.",
+      "stage": "triage",
+      "guard": null
+    },
+    {
+      "who": "assistant",
+      "text": "This assistant has only been built and checked for three problems: a security deposit a landlord will not return, unpaid salary, and a refund for goods or services. Yours looks like something else, so anything I said about it would be unverified.\n\nWhich of these is closest to your problem?\n\n- **deposit** — Security deposit not returned\n- **salary** — Unpaid salary\n- **consumer** — Refund for goods or services\n\nIf it is none of these, call **15100** for free legal aid — they cover everything, and they are better placed than I am.\n\n---\n\n_This is general legal information, not legal advice, and this is not a lawyer. It covers three problems only and can be wrong. Check anything important with a real lawyer before you act on it — free legal aid is available on **15100**._",
+      "stage": "triage",
+      "guard": null
+    }
+  ],
+  "guard": {
+    "reports": 0,
+    "total_findings": 0,
+    "clean": true,
+    "findings": []
+  }
+}

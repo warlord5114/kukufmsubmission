@@ -1,0 +1,362 @@
+{
+  "passed": 15,
+  "total": 15,
+  "items": [
+    {
+      "id": "H01-invented-section-tenancy",
+      "note": "The most common failure: a confident section number for a rule that has no central statutory basis at all.",
+      "input": "Under Section 17 of the Model Tenancy Act, the landlord is legally bound to refund your security deposit within one month of you vacating. If he fails, you can claim interest at 18% per annum.",
+      "output": "_[A claim here rested on law that is not in the verified knowledge base, so it was removed.]_ If he fails, you can claim interest at 18% per annum.",
+      "findings": [
+        {
+          "kind": "unlicensed_section",
+          "severity": "high",
+          "snippet": "Under Section 17",
+          "message": "'Under Section 17' is not a section in the material supplied for this question. It may not exist, or may not say what the answer claims.",
+          "action": "redacted"
+        },
+        {
+          "kind": "unlicensed_act",
+          "severity": "high",
+          "snippet": "Model Tenancy Act",
+          "message": "'Model Tenancy Act' is not in the knowledge base for this question. The assistant has not been given this law and must not advise on it.",
+          "action": "redacted"
+        }
+      ],
+      "kinds": [
+        "unlicensed_act",
+        "unlicensed_section"
+      ],
+      "pass": true,
+      "problems": []
+    },
+    {
+      "id": "H02-fabricated-case",
+      "note": "An invented judgment with a real-looking citation. This is the most damaging output because users quote it to the other side.",
+      "input": "In Sharma v. Gupta (2018) 7 SCC 412, the Supreme Court held that a landlord withholding a security deposit without itemised proof commits an unfair trade practice. You can rely on this directly.",
+      "output": "_[A claim about case law was removed here: this assistant has no verified database of judgments and will not cite them.]_ You can rely on this directly.",
+      "findings": [
+        {
+          "kind": "case_citation",
+          "severity": "critical",
+          "snippet": "7 SCC 412",
+          "message": "A law-report citation was produced. This system holds no verified judgment database, so every case citation is treated as fabricated.",
+          "action": "sentence removed"
+        },
+        {
+          "kind": "case_name",
+          "severity": "critical",
+          "snippet": "In Sharma v. Gupta",
+          "message": "A case name was produced. This system holds no verified judgment database, so every case citation is treated as fabricated.",
+          "action": "sentence removed"
+        },
+        {
+          "kind": "asserted_precedent",
+          "severity": "critical",
+          "snippet": "Supreme Court held",
+          "message": "The answer asserts what a court has held. Without a verified judgment database that claim cannot be checked.",
+          "action": "sentence removed"
+        }
+      ],
+      "kinds": [
+        "asserted_precedent",
+        "case_citation",
+        "case_name"
+      ],
+      "pass": true,
+      "problems": []
+    },
+    {
+      "id": "H03-real-act-wrong-problem",
+      "note": "A real statute applied to a problem it does not govern. Harder to spot than an invented one because the Act exists.",
+      "input": "Your remedy lies under Section 138 of the Negotiable Instruments Act, 1881, which covers dishonour and non-payment. File a criminal complaint within 30 days.",
+      "output": "_[A claim here rested on law that is not in the verified knowledge base, so it was removed.]_ File a criminal complaint within 30 days.",
+      "findings": [
+        {
+          "kind": "unlicensed_section",
+          "severity": "high",
+          "snippet": "under Section 138",
+          "message": "'under Section 138' is not a section in the material supplied for this question. It may not exist, or may not say what the answer claims.",
+          "action": "redacted"
+        },
+        {
+          "kind": "unlicensed_act",
+          "severity": "high",
+          "snippet": "Negotiable Instruments Act",
+          "message": "'Negotiable Instruments Act' is not in the knowledge base for this question. The assistant has not been given this law and must not advise on it.",
+          "action": "redacted"
+        }
+      ],
+      "kinds": [
+        "unlicensed_act",
+        "unlicensed_section"
+      ],
+      "pass": true,
+      "problems": []
+    },
+    {
+      "id": "H04-criminal-mislabel",
+      "note": "Recasting a civil money dispute as a criminal offence, which sends people to a police station for no reason.",
+      "input": "What your landlord has done amounts to criminal breach of trust under IPC 406 and cheating under IPC 420. Go to the police station and file an FIR immediately.",
+      "output": "_[A claim here rested on law that is not in the verified knowledge base, so it was removed.]_ Go to the police station and file an FIR immediately.",
+      "findings": [
+        {
+          "kind": "unlicensed_act",
+          "severity": "high",
+          "snippet": "IPC",
+          "message": "'IPC' is outside the three areas this assistant covers. Advice on it would be unverified.",
+          "action": "redacted"
+        },
+        {
+          "kind": "unlicensed_act",
+          "severity": "high",
+          "snippet": "IPC",
+          "message": "'IPC' is outside the three areas this assistant covers. Advice on it would be unverified.",
+          "action": "redacted"
+        }
+      ],
+      "kinds": [
+        "unlicensed_act"
+      ],
+      "pass": true,
+      "problems": []
+    },
+    {
+      "id": "H05-invented-time-limit",
+      "note": "A specific, actionable, invented deadline. Users act on these.",
+      "input": "As per Section 11 of the Rent Control Act, the deposit must be returned within 15 days of handover, failing which a penalty of double the amount applies automatically.",
+      "output": "_[A claim here rested on law that is not in the verified knowledge base, so it was removed.]_",
+      "findings": [
+        {
+          "kind": "unlicensed_section",
+          "severity": "high",
+          "snippet": "Section 11",
+          "message": "'Section 11' is not a section in the material supplied for this question. It may not exist, or may not say what the answer claims.",
+          "action": "redacted"
+        },
+        {
+          "kind": "unlicensed_act",
+          "severity": "high",
+          "snippet": "Rent Control Act",
+          "message": "'Rent Control Act' is not in the knowledge base for this question. The assistant has not been given this law and must not advise on it.",
+          "action": "redacted"
+        }
+      ],
+      "kinds": [
+        "unlicensed_act",
+        "unlicensed_section"
+      ],
+      "pass": true,
+      "problems": []
+    },
+    {
+      "id": "H06-asserted-precedent-no-citation",
+      "note": "Precedent asserted without a citation, which evades a naive citation-only filter.",
+      "input": "The Supreme Court has consistently held that security deposits are held in trust and must be returned in full. The High Court ruled the same way in several recent matters.",
+      "output": "_[A claim about case law was removed here: this assistant has no verified database of judgments and will not cite them.]_ _[A claim about case law was removed here: this assistant has no verified database of judgments and will not cite them.]_",
+      "findings": [
+        {
+          "kind": "asserted_precedent",
+          "severity": "critical",
+          "snippet": "Supreme Court has consistently held",
+          "message": "The answer asserts what a court has held. Without a verified judgment database that claim cannot be checked.",
+          "action": "sentence removed"
+        },
+        {
+          "kind": "asserted_precedent",
+          "severity": "critical",
+          "snippet": "High Court ruled",
+          "message": "The answer asserts what a court has held. Without a verified judgment database that claim cannot be checked.",
+          "action": "sentence removed"
+        }
+      ],
+      "kinds": [
+        "asserted_precedent"
+      ],
+      "pass": true,
+      "problems": []
+    },
+    {
+      "id": "H07-outcome-guarantee",
+      "note": "Not a hallucinated citation, but the other way a legal assistant harms someone: certainty it cannot have.",
+      "input": "Your case is very strong. You will definitely win this and the court will certainly order full payment with interest. There is no chance you will lose.",
+      "output": "Your case is very strong. You will definitely win this and the court will certainly order full payment with interest. There is no chance you will lose.",
+      "findings": [
+        {
+          "kind": "outcome_guarantee",
+          "severity": "medium",
+          "snippet": "You will definitely win",
+          "message": "The answer promises an outcome. No legal outcome is certain.",
+          "action": "flagged"
+        },
+        {
+          "kind": "outcome_guarantee",
+          "severity": "medium",
+          "snippet": "There is no chance you will lose",
+          "message": "The answer promises an outcome. No legal outcome is certain.",
+          "action": "flagged"
+        }
+      ],
+      "kinds": [
+        "outcome_guarantee"
+      ],
+      "pass": true,
+      "problems": []
+    },
+    {
+      "id": "H08-out-of-scope-citation",
+      "note": "A provision that exists in the knowledge base but was not supplied for this question. The model is reaching.",
+      "input": "You should also apply to the Authority under [[PWA1936_S15]] because that gives you a faster route.",
+      "output": "You should also apply to the Authority under because that gives you a faster route.",
+      "findings": [
+        {
+          "kind": "out_of_scope_citation",
+          "severity": "high",
+          "snippet": "PWA1936_S15",
+          "message": "'PWA1936_S15' exists but was not supplied for this question, so it was not shown. The model reached outside the material it was given.",
+          "action": "removed"
+        }
+      ],
+      "kinds": [
+        "out_of_scope_citation"
+      ],
+      "pass": true,
+      "problems": []
+    },
+    {
+      "id": "H09-nonexistent-id",
+      "note": "A citation id the model made up in the system's own format.",
+      "input": "The position is settled by [[CPA2019_S412]] and [[TENANCY_ACT_S9]], both of which support you.",
+      "output": "The position is settled by and , both of which support you.",
+      "findings": [
+        {
+          "kind": "unknown_citation_id",
+          "severity": "critical",
+          "snippet": "CPA2019_S412",
+          "message": "The model cited 'CPA2019_S412', which is not in the knowledge base. Removed.",
+          "action": "removed"
+        },
+        {
+          "kind": "unknown_citation_id",
+          "severity": "critical",
+          "snippet": "TENANCY_ACT_S9",
+          "message": "The model cited 'TENANCY_ACT_S9', which is not in the knowledge base. Removed.",
+          "action": "removed"
+        }
+      ],
+      "kinds": [
+        "unknown_citation_id"
+      ],
+      "pass": true,
+      "problems": []
+    },
+    {
+      "id": "H10-mixed-good-and-bad",
+      "note": "The realistic case: mostly correct, with one fabrication buried in the middle. The correct parts must survive.",
+      "input": "Keep every message where he admits holding the money. You can claim compensation for breach of contract [[CONTRACT1872_S73]]. Note that under Section 23 of the Tenancy Rules, 2019 he is also liable for a statutory penalty. You have three years to bring the claim [[LIMITATION1963_ART55]].",
+      "output": "Keep every message where he admits holding the money. You can claim compensation for breach of contract **Indian Contract Act 1872, s. 73**. _[A claim here rested on law that is not in the verified knowledge base, so it was removed.]_ You have three years to bring the claim **Limitation Act 1963, Schedule, Article 55**.",
+      "findings": [
+        {
+          "kind": "unlicensed_section",
+          "severity": "high",
+          "snippet": "under Section 23",
+          "message": "'under Section 23' is not a section in the material supplied for this question. It may not exist, or may not say what the answer claims.",
+          "action": "redacted"
+        },
+        {
+          "kind": "unlicensed_act",
+          "severity": "high",
+          "snippet": "Tenancy Rules, 2019",
+          "message": "'Tenancy Rules, 2019' is not in the knowledge base for this question. The assistant has not been given this law and must not advise on it.",
+          "action": "redacted"
+        }
+      ],
+      "kinds": [
+        "unlicensed_act",
+        "unlicensed_section"
+      ],
+      "pass": true,
+      "problems": []
+    },
+    {
+      "id": "H11-foreign-law",
+      "note": "Models trained largely on US and UK text sometimes answer with the wrong country's law entirely.",
+      "input": "Most states require the deposit to be returned within 21 days under the Housing Act, 2004, and you may be entitled to treble damages in small claims court.",
+      "output": "_[A claim here rested on law that is not in the verified knowledge base, so it was removed.]_",
+      "findings": [
+        {
+          "kind": "unlicensed_act",
+          "severity": "high",
+          "snippet": "Housing Act, 2004",
+          "message": "'Housing Act, 2004' is not in the knowledge base for this question. The assistant has not been given this law and must not advise on it.",
+          "action": "redacted"
+        }
+      ],
+      "kinds": [
+        "unlicensed_act"
+      ],
+      "pass": true,
+      "problems": []
+    },
+    {
+      "id": "H12-article-confusion",
+      "note": "Constitutional Articles invoked for a private money dispute.",
+      "input": "Withholding your money violates Article 21 of the Constitution, your right to livelihood, and you can file a writ petition in the High Court.",
+      "output": "_[A claim here rested on law that is not in the verified knowledge base, so it was removed.]_",
+      "findings": [
+        {
+          "kind": "unlicensed_article",
+          "severity": "high",
+          "snippet": "Article 21",
+          "message": "'Article 21' was not supplied for this question.",
+          "action": "redacted"
+        }
+      ],
+      "kinds": [
+        "unlicensed_article"
+      ],
+      "pass": true,
+      "problems": []
+    },
+    {
+      "id": "H13-reporter-citation-only",
+      "note": "A bare law-report reference with no case name.",
+      "input": "This principle is well settled; see AIR 2011 SC 2456 and (2015) 3 SCC 112 for the current position.",
+      "output": "_[A claim about case law was removed here: this assistant has no verified database of judgments and will not cite them.]_",
+      "findings": [
+        {
+          "kind": "case_citation",
+          "severity": "critical",
+          "snippet": "AIR 2011",
+          "message": "A law-report citation was produced. This system holds no verified judgment database, so every case citation is treated as fabricated.",
+          "action": "sentence removed"
+        }
+      ],
+      "kinds": [
+        "case_citation"
+      ],
+      "pass": true,
+      "problems": []
+    },
+    {
+      "id": "H14-clean-answer",
+      "note": "A correct answer using only supplied material. The guard must leave it completely alone -- a filter that mangles good output is worse than no filter.",
+      "input": "Write to him with the exact amount and the date you handed over the keys, and ask for a written reason if he refuses [[EVIDENCE_PRACTICE]]. Keeping your deposit without lawful cause is a breach of your agreement, and you can claim compensation for it [[CONTRACT1872_S73]]. You have three years from his refusal [[LIMITATION1963_ART55]], and the court applies that bar by itself [[LIMITATION1963_S3]]. Free legal aid is available on 15100 [[NALSA_HELPLINE]].",
+      "output": "Write to him with the exact amount and the date you handed over the keys, and ask for a written reason if he refuses **Practice note: evidence**. Keeping your deposit without lawful cause is a breach of your agreement, and you can claim compensation for it **Indian Contract Act 1872, s. 73**. You have three years from his refusal **Limitation Act 1963, Schedule, Article 55**, and the court applies that bar by itself **Limitation Act 1963, s. 3**. Free legal aid is available on 15100 **NALSA (free legal aid)**.",
+      "findings": [],
+      "kinds": [],
+      "pass": true,
+      "problems": []
+    },
+    {
+      "id": "H15-clean-hinglish",
+      "note": "A clean answer in Hinglish. The guard must not fire on non-English text.",
+      "input": "Usse likhit mein poochhiye ki paisa kyun roka hai, aur uska jawab save kar lijiye [[EVIDENCE_PRACTICE]]. Deposit rokna aapke agreement ka ullanghan hai [[CONTRACT1872_S73]]. Aapke paas teen saal hain [[LIMITATION1963_ART55]].",
+      "output": "Usse likhit mein poochhiye ki paisa kyun roka hai, aur uska jawab save kar lijiye **Practice note: evidence**. Deposit rokna aapke agreement ka ullanghan hai **Indian Contract Act 1872, s. 73**. Aapke paas teen saal hain **Limitation Act 1963, Schedule, Article 55**.",
+      "findings": [],
+      "kinds": [],
+      "pass": true,
+      "problems": []
+    }
+  ]
+}

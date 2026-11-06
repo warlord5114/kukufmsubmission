@@ -1,0 +1,242 @@
+{
+  "case": {
+    "domain": "salary",
+    "domain_label": "Unpaid salary",
+    "lang": "en",
+    "facts": {
+      "amount": 2026.0,
+      "monthly_wage": 2026.0,
+      "due_since": "2026-07-01",
+      "still_employed": false,
+      "has_appointment_letter": true
+    },
+    "flags": [],
+    "notes": [
+      "classified as salary (confidence 1.0, scores {'deposit': 0, 'salary': 7, 'consumer': 0})"
+    ],
+    "complete": true,
+    "completeness": [
+      4,
+      5
+    ]
+  },
+  "checks": [
+    {
+      "check": "domain",
+      "pass": true,
+      "detail": "got 'salary', want 'salary'"
+    },
+    {
+      "check": "escalates_to_human",
+      "pass": true,
+      "detail": "escalations ['criminal_matter']"
+    },
+    {
+      "check": "escalation_present",
+      "pass": true,
+      "detail": "got ['criminal_matter']"
+    },
+    {
+      "check": "disclaimer_shown",
+      "pass": true,
+      "detail": "no disclaimer in the consultation"
+    },
+    {
+      "check": "no_case_law_anywhere",
+      "pass": true,
+      "detail": "unredacted case law present"
+    }
+  ],
+  "session_id": "6ba2c094",
+  "stage": "assessed",
+  "assessment": {
+    "case": {
+      "domain": "salary",
+      "domain_label": "Unpaid salary",
+      "lang": "en",
+      "facts": {
+        "amount": 2026.0,
+        "monthly_wage": 2026.0,
+        "due_since": "2026-07-01",
+        "still_employed": false,
+        "has_appointment_letter": true
+      },
+      "flags": [],
+      "notes": [
+        "classified as salary (confidence 1.0, scores {'deposit': 0, 'salary': 7, 'consumer': 0})"
+      ],
+      "complete": true,
+      "completeness": [
+        4,
+        5
+      ]
+    },
+    "deadline": {
+      "rule_key": "salary_pwa",
+      "label": "12 months",
+      "runs_from_date": "2026-07-01",
+      "runs_from_desc": "the date the first unpaid salary became payable",
+      "expires_on": "2027-07-01",
+      "days_left": 237,
+      "expired": false,
+      "urgent": false,
+      "condonable": true,
+      "condonation_note": "The Authority may admit a late application for sufficient cause, but do not rely on it.",
+      "cites": [
+        "PWA1936_S15_2_LIMIT"
+      ]
+    },
+    "forums": [
+      {
+        "id": "internal_demand",
+        "name": "Written demand to the employer",
+        "stage": "before filing",
+        "how": "Email HR and the reporting manager with the exact amount and period, and ask for a written reason if they refuse. Keep the thread.",
+        "fee": null,
+        "fee_label": "Free, or the cost of registered post",
+        "lawyer_needed": false,
+        "typical_time": "15 to 30 days",
+        "caveat": "",
+        "cites": [
+          "LEGAL_NOTICE_PRACTICE",
+          "EVIDENCE_PRACTICE"
+        ]
+      },
+      {
+        "id": "pw_authority",
+        "name": "Authority under the Payment of Wages Act",
+        "stage": "formal",
+        "how": "Apply to the Authority appointed under the Payment of Wages Act for your area, through the state Labour Department or Labour Commissioner's office.",
+        "fee": null,
+        "fee_label": "No court fee for the application",
+        "lawyer_needed": false,
+        "typical_time": "varies by state, often a few months",
+        "caveat": "",
+        "cites": [
+          "PWA1936_S15",
+          "PWA1936_S15_2_LIMIT",
+          "PWA1936_S5",
+          "PWA1936_S1_6"
+        ]
+      },
+      {
+        "id": "labour_commissioner",
+        "name": "Labour Commissioner / conciliation",
+        "stage": "formal",
+        "how": "File a complaint with the office of the Labour Commissioner for your district. They call both sides for conciliation.",
+        "fee": null,
+        "fee_label": "Free",
+        "lawyer_needed": false,
+        "typical_time": "weeks to months",
+        "caveat": "",
+        "cites": [
+          "SHOPS_ESTAB_STATE"
+        ]
+      },
+      {
+        "id": "civil_suit_salary",
+        "name": "Civil suit for recovery",
+        "stage": "formal",
+        "how": "A recovery suit in the civil court with jurisdiction. Usually the last resort for salary.",
+        "fee": null,
+        "fee_label": "Court fee on a percentage of the amount claimed, varying by state",
+        "lawyer_needed": true,
+        "typical_time": "a year or more",
+        "caveat": "",
+        "cites": [
+          "CONTRACT1872_S73",
+          "LIMITATION1963_ART55"
+        ]
+      }
+    ],
+    "escalations": [
+      {
+        "rule_id": "criminal",
+        "trigger": "criminal_matter",
+        "message": "This involves a criminal matter. That is outside what this assistant covers and getting it wrong is costly.",
+        "urgency": "high",
+        "extra": ""
+      }
+    ],
+    "must_see_lawyer": true,
+    "citation_ids": [
+      "PWA1936_S15_2_LIMIT",
+      "LEGAL_NOTICE_PRACTICE",
+      "EVIDENCE_PRACTICE",
+      "PWA1936_S15",
+      "PWA1936_S5",
+      "PWA1936_S1_6",
+      "SHOPS_ESTAB_STATE",
+      "CONTRACT1872_S73",
+      "LIMITATION1963_ART55",
+      "ID1947_S33C2",
+      "CODEWAGES2019_STATUS",
+      "LIMITATION1963_S3",
+      "LSA1987_S12",
+      "NALSA_HELPLINE"
+    ]
+  },
+  "transcript": [
+    {
+      "who": "user",
+      "text": "My employer has not paid me 40000 and has also filed a police complaint against me saying I stole from the office. Salary unpaid since July 2026.",
+      "stage": "triage",
+      "guard": null
+    },
+    {
+      "who": "assistant",
+      "text": "Got it — this looks like **Unpaid salary**. I need a few facts before I can tell you anything useful.\n\n**(3/5)** Are you still working there?",
+      "stage": "intake",
+      "guard": null
+    },
+    {
+      "who": "user",
+      "text": "my salary was 22000 a month",
+      "stage": "intake",
+      "guard": null
+    },
+    {
+      "who": "assistant",
+      "text": "**(3/5)** Are you still working there?",
+      "stage": "intake",
+      "guard": null
+    },
+    {
+      "who": "user",
+      "text": "no I was removed",
+      "stage": "intake",
+      "guard": null
+    },
+    {
+      "who": "assistant",
+      "text": "**(3/5)** Do you have an appointment letter or written contract?",
+      "stage": "intake",
+      "guard": null
+    },
+    {
+      "who": "user",
+      "text": "yes I have the appointment letter",
+      "stage": "intake",
+      "guard": null
+    },
+    {
+      "who": "assistant",
+      "text": "So you are owed ₹2,026 in unpaid salary, going back to 01 July 2026. Here is what you can do about it.\n\n## Where you stand — ₹2,026\n\n### 🚨 You should speak to a real lawyer\n\n- 🟠 This involves a criminal matter. That is outside what this assistant covers and getting it wrong is costly.\n\nFree legal aid: call **15100** (NALSA), or walk into the District Legal Services Authority at your district court. Both are free.\n\n_A free lawyer is a legal right for many people, not a favour. Women and industrial workmen qualify regardless of income._\n\n---\n\n### ⏳ Your deadline\n\n🟢 **You have about 237 days left.**\n\nYou have **12 months** from **01 July 2026** (the date the first unpaid salary became payable). That runs out on **01 July 2027**.\n\n### 🏛️ Where to go\n\n**Try these first — they are free and often enough:**\n\n- **Written demand to the employer** — Email HR and the reporting manager with the exact amount and period, and ask for a written reason if they refuse. Keep the thread.\n  - Usually takes: 15 to 30 days\n\n**If that does not work:**\n\n- **Authority under the Payment of Wages Act** — No court fee for the application; varies by state, often a few months; you can do this yourself\n  - Apply to the Authority appointed under the Payment of Wages Act for your area, through the state Labour Department or Labour Commissioner's office.\n- **Labour Commissioner / conciliation** — Free; weeks to months; you can do this yourself\n  - File a complaint with the office of the Labour Commissioner for your district. They call both sides for conciliation.\n- **Civil suit for recovery** — Court fee on a percentage of the amount claimed, varying by state; a year or more; lawyer recommended\n  - A recovery suit in the civil court with jurisdiction. Usually the last resort for salary.\n\n### 📄 What to gather\n\n**You already have:**\n\n- ✅ the appointment letter or contract\n\nAnything in writing where they admit the amount is your strongest card. Bank records beat memory. Save the screenshots now.\n\n### ✅ What to do next\n\n1. Put **01 July 2027** in your phone calendar now. That is your hard deadline.\n2. Email HR and the reporting manager with the exact amount and period, and ask for a written reason if they refuse. Keep the thread.\n3. Save your evidence somewhere it cannot be lost: screenshot the chats, download the bank statement, photograph the agreement.\n4. If there is no reply in 15 days, send a written legal notice. This tool can draft one for you from the facts above.\n5. If that fails: Authority under the Payment of Wages Act.\n\n---\n\n_This is general legal information, not legal advice, and this is not a lawyer. It covers three problems only and can be wrong. Check anything important with a real lawyer before you act on it — free legal aid is available on **15100**._\n\n---\n\n**What this is based on**\n\n- **Payment of Wages Act 1936, s. 15(2) proviso** — Deadline for a wage claim to the Authority\n- **Practice note: legal notices** — What a legal notice does and does not do\n  - ⚠️ Some specific claims do require a statutory notice with its own deadline. None of the three domains this assistant covers is one of them, but a lawyer should confirm for anything outside them.\n- **Practice note: evidence** — What proof is worth having\n- **Payment of Wages Act 1936, s. 15** — Claiming unpaid or delayed wages\n- **Payment of Wages Act 1936, s. 5** — When wages must be paid\n- **Payment of Wages Act 1936, s. 1(6)** — Who the Payment of Wages Act covers\n  - ⚠️ The ceiling is set by notification and has been revised before. Confirm the current figure with the state Labour Department.\n- **State Shops & Establishments Act** — The state law covering shops and offices\n  - ⚠️ This assistant does not hold the text of any individual state Act and must not state section numbers, notice periods or limits for one.\n- **Indian Contract Act 1872, s. 73** — Compensation for breach of contract\n- **Limitation Act 1963, Schedule, Article 55** — Three years for breach of contract\n  - ⚠️ Which Article of the Schedule applies depends on how the claim is framed; a deposit claim may fall under Article 55 or the residuary Article 113. Both give three years.\n- **Legal Services Authorities Act 1987, s. 12** — Who gets a free lawyer\n  - ⚠️ The income limit is set separately by each state and by the Supreme Court Legal Services Committee. Do not state a figure.\n- **NALSA (free legal aid)** — Free legal help: who to call\n\n_Plain-language summaries written for this tool, not quotations from the statute. Every one links to the original — check it before you rely on it in anything you file._\n\n---\n\n**What else I can do**\n\n- `notice` — draft a legal notice you can send\n- `practice` — rehearse the argument against the other side\n- `summary` — your case file, to save or show a lawyer",
+      "stage": "assessed",
+      "guard": {
+        "clean": true,
+        "worst_severity": "none",
+        "blocked": false,
+        "used_citations": [],
+        "rejected_citations": [],
+        "findings": []
+      }
+    }
+  ],
+  "guard": {
+    "reports": 1,
+    "total_findings": 0,
+    "clean": true,
+    "findings": []
+  }
+}
