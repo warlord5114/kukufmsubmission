@@ -2,6 +2,8 @@
 
 **Kuku AI Generalist Assignment — Problem 2.**
 
+Link to prototype: https://kukufmsubmission-cyuzkctxabryn4ux6g7aba.streamlit.app/
+
 A conversational assistant for three everyday legal problems in India, in
 English, Hindi or Hinglish:
 
